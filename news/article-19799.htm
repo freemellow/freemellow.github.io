@@ -89,6 +89,7 @@
                                           				  				  				<div id="content_views" class="htmledit_views"> <div style="font-size:16px;"> <p align="center"><img decoding="async" src="http://img.555519.xyz/uploads/20221230/152df90ee845ae160e665c6639be1818.jpg" alt="python 列表 mysql in_python 解决mysql where in 对列表(list,,array)问题"></p> <p>例如有这么一个查询语句：</p> <p>select * from server where ip in (....)</p> <p>同时一个存放ip 的列表 ：["1.1.1.1","2.2.2.2","2.2.2.2"]</p> <p>我们希望在查询语句的in中放入这个Ip列表，这里我们首先会想到的是用join来对这个列表处理成一个字符串，如下：</p> <p>&gt;&gt;&gt; a=["1.1.1.1","2.2.2.2","2.2.2.2"]</p> <p>&gt;&gt;&gt; ",".join(a)</p> <p>"1.1.1.1,2.2.2.2,2.2.2.2"</p> <p>可以看到，join后的结果并不是我们想要的结果，因为引号的问题。所以我们会想到另外的办法：</p> <p>&gt;&gt;&gt; a=["1.1.1.1","2.2.2.2","2.2.2.2"]</p> <p>&gt;&gt;&gt; ",".join([""%s"" % item for item in a])</p> <p>""1.1.1.1","2.2.2.2","2.2.2.2""</p> <p>同样会有引号的问题，这个时候我们可以通过这个字符串去掉前后的双引号来达到目的。</p> <p>但是，其实我们还有一种更安全更方便的方式，如下：</p> <p>&gt;&gt;&gt; a = ["1.1.1.1","2.2.2.2","3.3.3.3"]</p> <p>&gt;&gt;&gt; select_str = "select * from server where ip in (%s)" % ",".join(["%s"] * len(a))</p> <p>&gt;&gt;&gt; select_str</p> <p>"select * from server where ip in (%s,%s,%s)"</p> <p>这里我们先根据Ip列表的长度来生成对应的参数位置，然后通过MySQLdb模块中的execute函数来执行：</p> <p>cursor.execute(select_str,a)</p> <p>这样子就可以了</p> <p>补充知识：python中pymysql使用in时候的传参方式</p> <p># 注意这里使用in时候传参的方式 {topic_list}这不用加引号，是因为里面需要的值 topic_id是int</p> <p>sql = "select f_topic_id, f_topic_name, f_partition_num, f_replicas_factor, f_cluster_id, f_topic_token, f_log_retention_time, f_created_at, f_created_by, f_modified_at, f_modified_by from tkafka_topic where f_topic_id in ({topic_list});".format(topic_list=topic_list)</p> <p>总结：</p> <p>以前一开始以为传参是看传过来的参数是什么类型来加引号的，int不加引号，str加引号</p> <p>但是今天才知道，看的是里面接收参数的变量需要什么类型来加引号的。</p> <p>以上这篇python 解决mysql where in 对列表(list,,array)问题就是小编分享给大家的全部内容了，希望能给大家一个参考，也希望大家多多支持云海天教程。</p> <p>原文链接：https://blog.csdn.net/u011085172/article/details/79044490</p> </div></div> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
                                         <p>上一个：<a href="/news/article-19798.htm">Springboot 整合 xxljob 动态API调度任务(进阶篇)</a></p>
+                                        <p>下一个：<a href="/news/article-20256.htm">重庆宠物领养平台有哪些地方可以注册（重庆最大免费宠物领养平台）</a></p>
                                     </div>
                                     </div>
                     <div class="col-md-3">
@@ -98,16 +99,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-11-29-free-node-subscribe.htm" title="11月29日→21M/S|2024年最新免费节点Free Mellow订阅链接地址">11月29日→21M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-31-node-share-links.htm" title="10月31日→20.8M/S|2024年最新免费节点Free Mellow订阅链接地址">10月31日→20.8M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-9-free-subscribe-node.htm" title="10月9日→18.3M/S|2024年最新免费节点Free Mellow订阅链接地址">10月9日→18.3M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-28-free-subscribe-node.htm" title="9月28日→18M/S|2024年最新免费节点Free Mellow订阅链接地址">9月28日→18M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-1-free-subscribe-node.htm" title="12月1日→18.4M/S|2024年最新免费节点Free Mellow订阅链接地址">12月1日→18.4M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-20-node-share.htm" title="11月20日→22.8M/S|2024年最新免费节点Free Mellow订阅链接地址">11月20日→22.8M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-26-free-node-subscribe-links.htm" title="10月26日→18.1M/S|2024年最新免费节点Free Mellow订阅链接地址">10月26日→18.1M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
                         <li class="py-2"><a href="/free-nodes/2024-11-12-node-share-links.htm" title="11月12日→22.2M/S|2024年最新免费节点Free Mellow订阅链接地址">11月12日→22.2M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-11-free-node-subscribe.htm" title="10月11日→22.5M/S|2024年最新免费节点Free Mellow订阅链接地址">10月11日→22.5M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-30-free-node-subscribe-links.htm" title="11月30日→22.9M/S|2024年最新免费节点Free Mellow订阅链接地址">11月30日→22.9M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-19-free-node-subscribe-links.htm" title="11月19日→20.4M/S|2024年最新免费节点Free Mellow订阅链接地址">11月19日→20.4M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-21-node-share-links.htm" title="10月21日→21.8M/S|2024年最新免费节点Free Mellow订阅链接地址">10月21日→21.8M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-5-free-node-subscribe-links.htm" title="10月5日→18.1M/S|2024年最新免费节点Free Mellow订阅链接地址">10月5日→18.1M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-3-node-share-links.htm" title="10月3日→20.5M/S|2024年最新免费节点Free Mellow订阅链接地址">10月3日→20.5M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-18882.htm" title="动物疫苗的概念和特点有哪些 动物疫苗的概念和特点有哪些呢">动物疫苗的概念和特点有哪些 动物疫苗的概念和特点有哪些呢</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-23-node-share-links.htm" title="10月23日→18.3M/S|2024年最新免费节点Free Mellow订阅链接地址">10月23日→18.3M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-20715.htm" title="动物接种疫苗多少钱一针啊图片大全集（动物疫苗一般多少钱）">动物接种疫苗多少钱一针啊图片大全集（动物疫苗一般多少钱）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-27-node-share.htm" title="9月27日→18.8M/S|2024年最新免费节点Free Mellow订阅链接地址">9月27日→18.8M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-1-node-share.htm" title="11月1日→19.2M/S|2024年最新免费节点Free Mellow订阅链接地址">11月1日→19.2M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
                     </ul>
     </div>
 </div>
@@ -119,7 +120,7 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+                <h4><span class="badge" style="float: right;">9</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
