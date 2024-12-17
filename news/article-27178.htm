@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freemellow.github.io/news/article-27178.htm" />
+    <meta charset="utf-8">
+    <title>Python tkinter库图形绘制例子分享_python_</title>
+        <meta name="description" content="目录  一、椭圆绘制 二、矩形绘制 三、多边形绘制    一、椭圆绘制 实例代码：  import tkinter as tk                    # 导入tkinter库，并重命名" />
+        <link rel="icon" href="/assets/website/img/freemellow/favicon.ico" type="image/x-icon"/>
+    <!-- Stylesheets -->
+    <link href="/assets/website/css/freemellow/bootstrap.css" rel="stylesheet">
+    <link href="/assets/website/css/freemellow/responsive.css" rel="stylesheet">
+    <link href="/assets/website/css/freemellow/style.css" rel="stylesheet">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- mobile responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1J70V33BC1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1J70V33BC1');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="page-wrapper">
+                <!-- Preloader -->
+        <div class="preloader"></div>
+        <!-- Preloader -->
+        <!--Main Header-->
+        <header class="main-header-block sticky-header">
+            <div class="container">
+                <div class="logo">
+                    <figure> 
+                        <a href="/">
+                                                        <span>Free Mellow</span>
+                                                    </a>
+                    </figure>
+                </div>
+                <div class="header-area clearfix">
+                    <nav class="main-menu-navigation">
+                        <div class="navbar-header">
+                            <!-- Toggle Button -->
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                        </div>
+                        <div class="navbar-collapse collapse clearfix">
+                            <ul class="navigation clearfix">
+                                                                <li><a href="/">首页</a></li>
+                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                <li><a href="#">关于</a></li>
+                                <li><a href="#">联系</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <!--End Main Header -->
+        <!--Page Title-->
+        <section class="page-title">
+            <div class="container clearfix text-center">
+                <div class="title">
+                    <h1>Python tkinter库图形绘制例子分享_python_</h1>
+                </div>
+                <ul class="title-manu">
+                    <li><a href="/">首页</a></li>
+                    <li>-</li>
+                    <li><a href="/news/">新闻资讯</a></li>
+                    <li>-</li>
+                    <li>正文</li>
+                </ul>
+            </div>
+        </section>
+        <!--End Page Title-->
+        <!--Wellcome Section-->
+        <section class="wellcome-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                          				  				  				<div id="navCategory"> <h5 class="catalogue">目录</h5> <ul class="first_class_ul"> <li><a href="#_label0" rel="nofollow">一、椭圆绘制</a></li> <li><a href="#_label1" rel="nofollow">二、矩形绘制</a></li> <li><a href="#_label2" rel="nofollow">三、多边形绘制</a></li> </ul> </div> <p class="maodian"><a name="_label0" rel="nofollow"></a></p> <h2>一、椭圆绘制</h2> <p><strong>实例代码：</strong></p> <div class="ay1code"> <pre class="brush:py;">import tkinter as tk                    # 导入tkinter库，并重命名为tk  from tkinter import messagebox          # 导入messagebox模块  mywindow = tk.Tk()                      # 创建一个窗体  mywindow.title("绘制椭圆")              # 设置窗体的标题  # 创建画布并布局  mycanvas = tk.Canvas(mywindow,width=350,height=350,bg="white")  mycanvas.pack()  # 绘制椭圆  myoval = mycanvas.create_oval(10,20,340,300)   # create_oval()方法绘制椭圆  # 设置椭圆边框的宽度和颜色  myova2 = mycanvas.create_oval(30,50,320,280,width=5)  myova3 = mycanvas.create_oval(50,70,320,260,width=5,outline="red")  # 设置椭圆的边框是否是虚线  myova4 = mycanvas.create_oval(70,90,300,240,width=8,outline="red",dash=(5,3))  # 设置椭圆的填充色  myova5 = mycanvas.create_oval(100,120,260,200,width=8,outline="blue",dash=(5,3),fill="purple")  # 绘制圆  myova6 = mycanvas.create_oval(140,140,180,180,width=5,outline="red")     mywindow.mainloop()      # 显示画布</pre> </div> <p><strong>运行结果：</strong></p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220414/031f52441f63b8647a8a6030ac9aefcb.jpg"></p> <p class="maodian"><a name="_label1" rel="nofollow"></a></p> <h2>二、矩形绘制</h2> <p><strong>实例代码：</strong></p> <div class="ay1code"> <pre class="brush:py;">import tkinter as tk                    # 导入tkinter库，并重命名为tk  from tkinter import messagebox          # 导入messagebox模块  mywindow = tk.Tk()                      # 创建一个窗体  mywindow.title("绘制矩形")               # 设置窗体的标题  # 创建画布并布局  mycanvas = tk.Canvas(mywindow, width=350, height=350, bg="purple")  mycanvas.pack()  # 绘制矩形  a = 10         # 定义两个整型变量  b = 340  # 利用for循环结制多个矩形  for i in range(a, b, 20):      mycanvas.create_rectangle(a+i, a+i, b-i, b-i)   # .create_rectangle()方法可以绘制矩形     mywindow.mainloop()      # 显示画布</pre> </div> <p><strong>运行结果：</strong></p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220414/d54b0d19ff2e06a678db451fa0828589.jpg"></p> <p class="maodian"><a name="_label2" rel="nofollow"></a></p> <h2>三、多边形绘制</h2> <p><strong>实例代码：</strong></p> <div class="ay1code"> <pre class="brush:py;">import tkinter as tk                     # 导入tkinter库，并重命名为tk  mywindow = tk.Tk()                       # 创建一个窗体  mywindow.title("绘制多边形")              # 设置窗体的标题  # 创建画布并布局  mycanvas = tk.Canvas(mywindow, width=250, height=250, bg="white")  mycanvas.pack()     # 绘制多边形  mycanvas.create_polygon(80,80,80,180,130,220,180,180,180,80,130,40, fill="purple",width=5,outline="red")     mywindow.mainloop()      # 显示画布</pre> </div> <p><strong>运行结果：</strong></p> <p> </p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220414/dd8dc735f4f705f471368c2bddf743f3.jpg"></p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-27177.htm">python向hive插入数据遇到的坑</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-9-30-free-node-subscribe.htm" title="9月30日→22.8M/S|2024年最新免费节点Free Mellow订阅链接地址">9月30日→22.8M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-19336.htm" title="使用maven构建SpringBoot打包成war包，步骤，超级详细">使用maven构建SpringBoot打包成war包，步骤，超级详细</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-6-free-subscribe-node.htm" title="11月6日→18.3M/S|2024年最新免费节点Free Mellow订阅链接地址">11月6日→18.3M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-27-node-share-links.htm" title="11月27日→19.8M/S|2024年最新免费节点Free Mellow订阅链接地址">11月27日→19.8M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-24-free-high-speed-nodes.htm" title="11月24日→19.3M/S|2024年最新免费节点Free Mellow订阅链接地址">11月24日→19.3M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-15-node-share-links.htm" title="10月15日→22.7M/S|2024年最新免费节点Free Mellow订阅链接地址">10月15日→22.7M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-1-node-share-links.htm" title="10月1日→18M/S|2024年最新免费节点Free Mellow订阅链接地址">10月1日→18M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-9-free-subscribe-node.htm" title="10月9日→18.3M/S|2024年最新免费节点Free Mellow订阅链接地址">10月9日→18.3M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-22546.htm" title="PHP字符串运算符详解">PHP字符串运算符详解</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-12-free-node-subscribe.htm" title="12月12日→19.4M/S|2024年最新免费节点Free Mellow订阅链接地址">12月12日→19.4M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">51</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End Wellcome Section-->
+                <!--main-footer-area-->
+        <footer class="main-footer-area" style="background: url(images/background/3.jpg);">
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="copyright-text text-center">
+                        <p>
+                            <a href="/">Free Mellow免费机场订阅节点官网</a> 版权所有
+                            <br />
+                            Powered by WordPress
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--End main-footer-area-->
+        <!--Scroll to top-->
+        <div class="scroll-to-top scroll-to-target" data-target=".header-top"><span class="icon fa fa-angle-up"></span></div>
+        <script src="/assets/website/js/frontend/freemellow/jquery.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/jquery.fancybox.pack.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/jquery.fancybox-media.js"></script>
+        <!--<script src="/assets/website/js/frontend/freemellow/html5lightbox.js"></script>-->
+        <!-- revolution slider js -->
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/jquery.themepunch.tools.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/jquery.themepunch.revolution.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.video.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/owl.carousel.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/wow.js"></script>
+        <!-- bxslider -->
+        <script src="/assets/website/js/frontend/freemellow/bxslider.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/jquery.countTo.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/script.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!--End pagewrapper-->
+</body>
+
+</html>
