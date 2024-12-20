@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <title>使用maven构建SpringBoot打包成war包，步骤，超级详细</title>
         <meta name="description" content="SpringBoot打包成war包，步骤超级详细    问题：使用maven构建SpringBoot打包成war包，发布到服务器上，总是报错 第一步： 第二步： 第三步： 第四步：     问题：使用" />
-        <link rel="icon" href="__ADDON__/img/freemellow/favicon.ico" type="image/x-icon"/>
+        <link rel="icon" href="/assets/website/img/freemellow/favicon.ico" type="image/x-icon"/>
     <!-- Stylesheets -->
     <link href="/assets/website/css/freemellow/bootstrap.css" rel="stylesheet">
     <link href="/assets/website/css/freemellow/responsive.css" rel="stylesheet">
@@ -15,8 +15,7 @@
     <!-- mobile responsive meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
-<!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1J70V33BC1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -86,7 +85,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-9">
-                                          				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <div class="toc"> <h3>SpringBoot打包成war包，步骤超级详细</h3> <ul> <li> <ul> <li><a href="#mavenSpringBootwar_1" rel="nofollow">问题：使用maven构建SpringBoot打包成war包，发布到服务器上，总是报错</a></li> <li><a href="#_4" rel="nofollow">第一步：</a></li> <li><a href="#_22" rel="nofollow">第二步：</a></li> <li><a href="#_29" rel="nofollow">第三步：</a></li> <li><a href="#_55" rel="nofollow">第四步：</a></li> </ul> </li> </ul> </div> <h2><a id="mavenSpringBootwar_1" rel="nofollow"></a>问题：使用maven构建SpringBoot打包成war包，发布到服务器上，总是报错</h2> <p>由于maven构建的SpringBoot项目，发布了n多次，也在网上查了很多，方法试完了，也没有找到错误原因，最后查看tomcat错误日志，总结了一下步骤</p> <h2><a id="_4" rel="nofollow"></a>第一步：</h2> <p>SpringBoot项目集成了tomcat的内置插件，我们需要在pom文件中将tomcat的内置插件排除在外<br /> 代码如下</p> <pre><code>&lt;dependency&gt;             &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;             &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;             &lt;!-- 移除嵌入式tomcat插件 --&gt;             &lt;exclusions&gt;                 &lt;exclusion&gt;                     &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;                     &lt;artifactId&gt;spring-boot-starter-tomcat&lt;/artifactId&gt;                 &lt;/exclusion&gt;             &lt;/exclusions&gt;         &lt;/dependency&gt;</code></pre> <h2><a id="_22" rel="nofollow"></a>第二步：</h2> <p>排除了Tomcat的内置插件之后，我们还需要注意的是，pom文件中打包方式一定要设置为war包形式</p> <pre><code>&lt;packaging&gt;war&lt;/packaging&gt;</code></pre> <h2><a id="_29" rel="nofollow"></a>第三步：</h2> <p>重写我们的SpringBoot启动类</p> <pre><code>import org.springframework.boot.SpringApplication; import org.springframework.boot.autoconfigure.SpringBootApplication; import org.springframework.boot.builder.SpringApplicationBuilder; import org.springframework.boot.web.support.SpringBootServletInitializer; import org.springframework.scheduling.annotation.EnableScheduling;  @SpringBootApplication @EnableScheduling public class JiChengSpringBoot extends SpringBootServletInitializer {      @Override     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {         return application.sources(JiChengSpringBoot.class);     }      public static void main(String[] args) {         SpringApplication.run(JiChengSpringBoot.class, args);     }  }</code></pre> <h2><a id="_55" rel="nofollow"></a>第四步：</h2> <p>这一步就是我遇到的问题关键了！！！！<br /> 去除pom文件中的</p> <pre><code>&lt;name&gt;jicheng&lt;/name&gt;</code></pre> <p>一定要去除name标签，据我查看日志，导致错误的原因是web.xml的mapping与servlet-name不匹配导致的，所以这里大胆的猜测，这个name会影响web.xml中的某个name</p> <p><strong>这里我去掉这个标签之后，问题得到了结局，<strong>希望可以帮到你们</strong></strong></p> </div> 			                <div class="clearfix"></div>
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <div class="toc"> <h3>SpringBoot打包成war包，步骤超级详细</h3> <ul> <li> <ul> <li><a href="#mavenSpringBootwar_1" rel="nofollow">问题：使用maven构建SpringBoot打包成war包，发布到服务器上，总是报错</a></li> <li><a href="#_4" rel="nofollow">第一步：</a></li> <li><a href="#_22" rel="nofollow">第二步：</a></li> <li><a href="#_29" rel="nofollow">第三步：</a></li> <li><a href="#_55" rel="nofollow">第四步：</a></li> </ul> </li> </ul> </div> <h2><a id="mavenSpringBootwar_1" rel="nofollow"></a>问题：使用maven构建SpringBoot打包成war包，发布到服务器上，总是报错</h2> <p>由于maven构建的SpringBoot项目，发布了n多次，也在网上查了很多，方法试完了，也没有找到错误原因，最后查看tomcat错误日志，总结了一下步骤</p> <h2><a id="_4" rel="nofollow"></a>第一步：</h2> <p>SpringBoot项目集成了tomcat的内置插件，我们需要在pom文件中将tomcat的内置插件排除在外<br /> 代码如下</p> <pre><code>&lt;dependency&gt;             &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;             &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;             &lt;!-- 移除嵌入式tomcat插件 --&gt;             &lt;exclusions&gt;                 &lt;exclusion&gt;                     &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;                     &lt;artifactId&gt;spring-boot-starter-tomcat&lt;/artifactId&gt;                 &lt;/exclusion&gt;             &lt;/exclusions&gt;         &lt;/dependency&gt;</code></pre> <h2><a id="_22" rel="nofollow"></a>第二步：</h2> <p>排除了Tomcat的内置插件之后，我们还需要注意的是，pom文件中打包方式一定要设置为war包形式</p> <pre><code>&lt;packaging&gt;war&lt;/packaging&gt;</code></pre> <h2><a id="_29" rel="nofollow"></a>第三步：</h2> <p>重写我们的SpringBoot启动类</p> <pre><code>import org.springframework.boot.SpringApplication; import org.springframework.boot.autoconfigure.SpringBootApplication; import org.springframework.boot.builder.SpringApplicationBuilder; import org.springframework.boot.web.support.SpringBootServletInitializer; import org.springframework.scheduling.annotation.EnableScheduling;  @SpringBootApplication @EnableScheduling public class JiChengSpringBoot extends SpringBootServletInitializer {      @Override     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {         return application.sources(JiChengSpringBoot.class);     }      public static void main(String[] args) {         SpringApplication.run(JiChengSpringBoot.class, args);     }  }</code></pre> <h2><a id="_55" rel="nofollow"></a>第四步：</h2> <p>这一步就是我遇到的问题关键了！！！！<br /> 去除pom文件中的</p> <pre><code>&lt;name&gt;jicheng&lt;/name&gt;</code></pre> <p>一定要去除name标签，据我查看日志，导致错误的原因是web.xml的mapping与servlet-name不匹配导致的，所以这里大胆的猜测，这个name会影响web.xml中的某个name</p> <p><strong>这里我去掉这个标签之后，问题得到了结局，<strong>希望可以帮到你们</strong></strong></p> </div> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
                                         <p>上一个：<a href="/news/article-18882.htm">动物疫苗的概念和特点有哪些 动物疫苗的概念和特点有哪些呢</a></p>
                                         <p>下一个：<a href="/news/article-19337.htm">开个宠物食品厂怎么样赚钱吗 开个宠物食品厂怎么样赚钱吗知乎</a></p>
@@ -99,16 +99,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-9-30-free-node-subscribe.htm" title="9月30日→22.8M/S|2024年最新免费节点Free Mellow订阅链接地址">9月30日→22.8M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-3-node-share-links.htm" title="10月3日→20.5M/S|2024年最新免费节点Free Mellow订阅链接地址">10月3日→20.5M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-14-node-share-links.htm" title="10月14日→20.8M/S|2024年最新免费节点Free Mellow订阅链接地址">10月14日→20.8M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-27-node-share-links.htm" title="11月27日→19.8M/S|2024年最新免费节点Free Mellow订阅链接地址">11月27日→19.8M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-9-free-subscribe-node.htm" title="10月9日→18.3M/S|2024年最新免费节点Free Mellow订阅链接地址">10月9日→18.3M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-1-node-share.htm" title="11月1日→19.2M/S|2024年最新免费节点Free Mellow订阅链接地址">11月1日→19.2M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-12-free-high-speed-nodes.htm" title="10月12日→20.8M/S|2024年最新免费节点Free Mellow订阅链接地址">10月12日→20.8M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-11-free-node-subscribe.htm" title="10月11日→22.5M/S|2024年最新免费节点Free Mellow订阅链接地址">10月11日→22.5M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-21-node-share-links.htm" title="10月21日→21.8M/S|2024年最新免费节点Free Mellow订阅链接地址">10月21日→21.8M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-16-free-high-speed-nodes.htm" title="11月16日→18.8M/S|2024年最新免费节点Free Mellow订阅链接地址">11月16日→18.8M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-20-node-share.htm" title="10月20日→19.5M/S|2024年最新免费节点Free Mellow订阅链接地址">10月20日→19.5M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-19798.htm" title="Springboot 整合 xxljob 动态API调度任务(进阶篇)">Springboot 整合 xxljob 动态API调度任务(进阶篇)</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-30-free-node-subscribe-links.htm" title="11月30日→22.9M/S|2024年最新免费节点Free Mellow订阅链接地址">11月30日→22.9M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-25781.htm" title="猫粮十大品牌（猫粮十大品牌排）">猫粮十大品牌（猫粮十大品牌排）</a></li>
+                        <li class="py-2"><a href="/news/article-22546.htm" title="PHP字符串运算符详解">PHP字符串运算符详解</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-4-free-subscribe-node.htm" title="12月4日→18.6M/S|2024年最新免费节点Free Mellow订阅链接地址">12月4日→18.6M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-27637.htm" title="上海排名前十的大宠物医院（上海排名最好的宠物医院）">上海排名前十的大宠物医院（上海排名最好的宠物医院）</a></li>
+                        <li class="py-2"><a href="/news/article-26264.htm" title="猫三联到底是几针疫苗（猫三联是几针啊）">猫三联到底是几针疫苗（猫三联是几针啊）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-22-free-node-subscribe.htm" title="11月22日→23M/S|2024年最新免费节点Free Mellow订阅链接地址">11月22日→23M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-11-free-node-subscribe.htm" title="11月11日→18.8M/S|2024年最新免费节点Free Mellow订阅链接地址">11月11日→18.8M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
                     </ul>
     </div>
 </div>
@@ -120,7 +120,7 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+                <h4><span class="badge" style="float: right;">57</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
@@ -145,6 +145,15 @@
             <div class="footer-bottom">
                 <div class="container">
                     <div class="copyright-text text-center">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
                         <p>
                             <a href="/">Free Mellow免费机场订阅节点官网</a> 版权所有
                             <br />

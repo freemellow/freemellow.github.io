@@ -85,7 +85,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-9">
-                                          				  				  				<p>async Task 语法糖出来后，异步编程变得非常简单，适合需要耗费较长时间的任务。</p> <p>有些小伙伴使用后可能会非常疑惑，使用异步和同步，在耗时上几乎没有差别。</p> <p>下面我们看一个例子，场景是需要调用多个第三方的WebApi，分别是获取名称、年龄、性别，由于网络环境等原因，api响应时间可能会接近1秒</p> <div class="ay1code"> <pre class="brush:csharp;">public async Task Test()  {      var sw = new Stopwatch();      sw.Start();        var userName = await GetUserNameAsync();      var userAge = await GetUserAgeAsync();      var userSex = await GetUserSexAsync();        sw.Stop();      var ts = sw.Elapsed;      Console.WriteLine($"总共耗时：{ts.TotalMilliseconds}ms");  }    private async Task&lt;string&gt; GetUserNameAsync()  {      await Task.Delay(500);      return "小明";  }    private async Task&lt;string&gt; GetUserAgeAsync()  {      await Task.Delay(800);      return "11";  }    private async Task&lt;string&gt; GetUserSexAsync()  {      await Task.Delay(900);      return "11";  }</pre> </div> <p>运行后发现，这个时间2秒多，这用户体验肯定是无法忍受的</p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220412/8fb645320e0f15c366442a5622f4ab34.jpg"></p> <p>导致这样结果的原因是每次进行异步调用的时候，都在异步函数前加上了 await ，对于单单这个过程来说，其实相当于同步，等待直到结果返回，每个异步函数都await，时间自然就叠加了，为了解决这个问题，使用一个小技巧，可以将代码改成下面这样</p> <div class="ay1code"> <pre class="brush:csharp;">public async Task Test()  {      var sw = new Stopwatch();      sw.Start();        var userNameTask =  GetUserNameAsync();      var userAgeTask =  GetUserAgeAsync();      var userSexTask =  GetUserSexAsync();        var userName = await userNameTask;      var userAge = await userAgeTask;      var userSex = await userSexTask;        sw.Stop();      var ts = sw.Elapsed;      Console.WriteLine($"总共耗时：{ts.TotalMilliseconds}ms");  }    private async Task&lt;string&gt; GetUserNameAsync()  {      await Task.Delay(500);      return "小明";  }    private async Task&lt;string&gt; GetUserAgeAsync()  {      await Task.Delay(800);      return "11";  }    private async Task&lt;string&gt; GetUserSexAsync()  {      await Task.Delay(900);      return "11";  }</pre> </div> <p>这次运行的总耗时，就是3个异步中，耗时最长那个GetUserSexAsync</p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220412/5245e55b5f871be4c53c2b6140e8ff1d.jpg"></p> <p>为什么会这样呢，这个小技巧的关键是这里，当执行到异步函数的时候，不加 await，不进行等待，让这些任务乖乖在别的线程的执行，当需要用到他们的时候，再去等待返回值，所以时间上不会进行叠加，哪个最长，总耗时就是哪个</p> <div class="ay1code"> <pre class="brush:csharp;">var userNameTask =  GetUserNameAsync();  var userAgeTask =  GetUserAgeAsync();  var userSexTask =  GetUserSexAsync();    var userName = await userNameTask;  var userAge = await userAgeTask;  var userSex = await userSexTask;</pre> </div> 			                <div class="clearfix"></div>
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<p>async Task 语法糖出来后，异步编程变得非常简单，适合需要耗费较长时间的任务。</p> <p>有些小伙伴使用后可能会非常疑惑，使用异步和同步，在耗时上几乎没有差别。</p> <p>下面我们看一个例子，场景是需要调用多个第三方的WebApi，分别是获取名称、年龄、性别，由于网络环境等原因，api响应时间可能会接近1秒</p> <div class="ay1code"> <pre class="brush:csharp;">public async Task Test()  {      var sw = new Stopwatch();      sw.Start();        var userName = await GetUserNameAsync();      var userAge = await GetUserAgeAsync();      var userSex = await GetUserSexAsync();        sw.Stop();      var ts = sw.Elapsed;      Console.WriteLine($"总共耗时：{ts.TotalMilliseconds}ms");  }    private async Task&lt;string&gt; GetUserNameAsync()  {      await Task.Delay(500);      return "小明";  }    private async Task&lt;string&gt; GetUserAgeAsync()  {      await Task.Delay(800);      return "11";  }    private async Task&lt;string&gt; GetUserSexAsync()  {      await Task.Delay(900);      return "11";  }</pre> </div> <p>运行后发现，这个时间2秒多，这用户体验肯定是无法忍受的</p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220412/8fb645320e0f15c366442a5622f4ab34.jpg"></p> <p>导致这样结果的原因是每次进行异步调用的时候，都在异步函数前加上了 await ，对于单单这个过程来说，其实相当于同步，等待直到结果返回，每个异步函数都await，时间自然就叠加了，为了解决这个问题，使用一个小技巧，可以将代码改成下面这样</p> <div class="ay1code"> <pre class="brush:csharp;">public async Task Test()  {      var sw = new Stopwatch();      sw.Start();        var userNameTask =  GetUserNameAsync();      var userAgeTask =  GetUserAgeAsync();      var userSexTask =  GetUserSexAsync();        var userName = await userNameTask;      var userAge = await userAgeTask;      var userSex = await userSexTask;        sw.Stop();      var ts = sw.Elapsed;      Console.WriteLine($"总共耗时：{ts.TotalMilliseconds}ms");  }    private async Task&lt;string&gt; GetUserNameAsync()  {      await Task.Delay(500);      return "小明";  }    private async Task&lt;string&gt; GetUserAgeAsync()  {      await Task.Delay(800);      return "11";  }    private async Task&lt;string&gt; GetUserSexAsync()  {      await Task.Delay(900);      return "11";  }</pre> </div> <p>这次运行的总耗时，就是3个异步中，耗时最长那个GetUserSexAsync</p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220412/5245e55b5f871be4c53c2b6140e8ff1d.jpg"></p> <p>为什么会这样呢，这个小技巧的关键是这里，当执行到异步函数的时候，不加 await，不进行等待，让这些任务乖乖在别的线程的执行，当需要用到他们的时候，再去等待返回值，所以时间上不会进行叠加，哪个最长，总耗时就是哪个</p> <div class="ay1code"> <pre class="brush:csharp;">var userNameTask =  GetUserNameAsync();  var userAgeTask =  GetUserAgeAsync();  var userSexTask =  GetUserSexAsync();    var userName = await userNameTask;  var userAge = await userAgeTask;  var userSex = await userSexTask;</pre> </div> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
                                         <p>上一个：<a href="/news/article-23451.htm">同安有哪些宠物医院好 同安有哪些宠物医院好点</a></p>
                                         <p>下一个：<a href="/news/article-23921.htm">动物医院英文缩写是什么意思 动物医院英文缩写是什么意思啊</a></p>
@@ -98,16 +99,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-10-3-node-share-links.htm" title="10月3日→20.5M/S|2024年最新免费节点Free Mellow订阅链接地址">10月3日→20.5M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-22546.htm" title="PHP字符串运算符详解">PHP字符串运算符详解</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-29-free-node-subscribe.htm" title="11月29日→21M/S|2024年最新免费节点Free Mellow订阅链接地址">11月29日→21M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-23-node-share-links.htm" title="10月23日→18.3M/S|2024年最新免费节点Free Mellow订阅链接地址">10月23日→18.3M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
                         <li class="py-2"><a href="/free-nodes/2024-11-27-node-share-links.htm" title="11月27日→19.8M/S|2024年最新免费节点Free Mellow订阅链接地址">11月27日→19.8M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-19799.htm" title="python 列表 mysql in_python 解决mysql where in 对列表(list,,array)问题">python 列表 mysql in_python 解决mysql where in 对列表(list,,array)问题</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-7-free-node-subscribe.htm" title="11月7日→23M/S|2024年最新免费节点Free Mellow订阅链接地址">11月7日→23M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-21169.htm" title="PHP浮点数据类型详解">PHP浮点数据类型详解</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-22-free-node-subscribe-links.htm" title="10月22日→21.6M/S|2024年最新免费节点Free Mellow订阅链接地址">10月22日→21.6M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-31-node-share-links.htm" title="10月31日→20.8M/S|2024年最新免费节点Free Mellow订阅链接地址">10月31日→20.8M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-18-free-node-subscribe-links.htm" title="12月18日→18.7M/S|2024年最新免费节点Free Mellow订阅链接地址">12月18日→18.7M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-29-free-high-speed-nodes.htm" title="10月29日→18.8M/S|2024年最新免费节点Free Mellow订阅链接地址">10月29日→18.8M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-26713.htm" title="宠颐生中心医院电话 宠颐生中心医院怎么样">宠颐生中心医院电话 宠颐生中心医院怎么样</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-21-node-share.htm" title="11月21日→19.5M/S|2024年最新免费节点Free Mellow订阅链接地址">11月21日→19.5M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-16-free-high-speed-nodes.htm" title="11月16日→18.8M/S|2024年最新免费节点Free Mellow订阅链接地址">11月16日→18.8M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-12-node-share-links.htm" title="11月12日→22.2M/S|2024年最新免费节点Free Mellow订阅链接地址">11月12日→22.2M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-14-free-high-speed-nodes.htm" title="12月14日→19.9M/S|2024年最新免费节点Free Mellow订阅链接地址">12月14日→19.9M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-11-free-node-subscribe.htm" title="12月11日→19.2M/S|2024年最新免费节点Free Mellow订阅链接地址">12月11日→19.2M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-23005.htm" title="开一家宠物店大概需要投资多少钱（宠物美容学费一般多少）">开一家宠物店大概需要投资多少钱（宠物美容学费一般多少）</a></li>
                     </ul>
     </div>
 </div>
@@ -119,7 +120,7 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">36</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+                <h4><span class="badge" style="float: right;">57</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
@@ -144,6 +145,15 @@
             <div class="footer-bottom">
                 <div class="container">
                     <div class="copyright-text text-center">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
                         <p>
                             <a href="/">Free Mellow免费机场订阅节点官网</a> 版权所有
                             <br />
