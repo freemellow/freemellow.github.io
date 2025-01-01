@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freemellow.github.io/news/article-33791.htm" />
+    <meta charset="utf-8">
+    <title>ubuntu 14.04 ndk 编译 openssl</title>
+        <meta name="description" content="概述 因工作上需要用到openssl，本文剪短描述ubuntu编译生成openssl，主要的命令参考网上，结合自己的实际使用版本 openssl:1.1.1g ubuntu:14.04 ndk:16b" />
+        <link rel="icon" href="/assets/website/img/freemellow/favicon.ico" type="image/x-icon"/>
+    <!-- Stylesheets -->
+    <link href="/assets/website/css/freemellow/bootstrap.css" rel="stylesheet">
+    <link href="/assets/website/css/freemellow/responsive.css" rel="stylesheet">
+    <link href="/assets/website/css/freemellow/style.css" rel="stylesheet">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- mobile responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1J70V33BC1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1J70V33BC1');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="page-wrapper">
+                <!-- Preloader -->
+        <div class="preloader"></div>
+        <!-- Preloader -->
+        <!--Main Header-->
+        <header class="main-header-block sticky-header">
+            <div class="container">
+                <div class="logo">
+                    <figure> 
+                        <a href="/">
+                                                        <span>Free Mellow</span>
+                                                    </a>
+                    </figure>
+                </div>
+                <div class="header-area clearfix">
+                    <nav class="main-menu-navigation">
+                        <div class="navbar-header">
+                            <!-- Toggle Button -->
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                        </div>
+                        <div class="navbar-collapse collapse clearfix">
+                            <ul class="navigation clearfix">
+                                                                <li><a href="/">首页</a></li>
+                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                <li><a href="#">关于</a></li>
+                                <li><a href="#">联系</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <!--End Main Header -->
+        <!--Page Title-->
+        <section class="page-title">
+            <div class="container clearfix text-center">
+                <div class="title">
+                    <h1>ubuntu 14.04 ndk 编译 openssl</h1>
+                </div>
+                <ul class="title-manu">
+                    <li><a href="/">首页</a></li>
+                    <li>-</li>
+                    <li><a href="/news/">新闻资讯</a></li>
+                    <li>-</li>
+                    <li>正文</li>
+                </ul>
+            </div>
+        </section>
+        <!--End Page Title-->
+        <!--Wellcome Section-->
+        <section class="wellcome-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p><strong>概述</strong><br /> 因工作上需要用到openssl，本文剪短描述ubuntu编译生成openssl，主要的命令参考网上，结合自己的实际使用<br /><strong>版本</strong><br /> openssl:1.1.1g<br /> ubuntu:14.04<br /> ndk:16b<br /><strong>准备</strong><br /> 下载openssl:http://distfiles.macports.org/openssl/openssl-1.1.1g.tar.gz<br /> openssl源码解压放在目录：/work1/SourceCode/openssl-1.1.1g<br /> 下载ndk:https://dl.google.com/android/repository/android-ndk-r16b-linux-x86_64.zip<br /> ndk放在目录：/home/shenweihong/Android/Ndk/android-ndk-r16b</p> <p><em>注意</em>：<br /> 本人之前用<br /> android-ndk-r21b android-ndk-r18b<br /> 编译均报错，很难解决。<br /> 最后试了android-ndk-r16b才编译成功。<br /> 本人后来编译openssl版本1.0.1j，用android-ndk-r16b编译报错，用android-ndk-r14b才成功。<br /><strong>环境变量</strong><br /> ubuntu命令：<br /> export PATH=/home/shenweihong/Android/Ndk/android-ndk-r16b/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin:$PATH<br /> export ANDROID_NDK_HOME=/home/shenweihong/Android/Ndk/android-ndk-r16b/<br /><strong>配置</strong><br /> ./Configure android-arm -D__ANDROID_API__=24 no-threads no-shared --prefix=/work1/SourceCode/opensslLib<br /> no-shared：表示编译结果为静态库，如果想编译结果动态库，就不要这一参数；<br /> –prefix=/work1/SourceCode/opensslLib：表示最终编译结果保存的路径；</p> <p>如下结果即表示配置成功：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221113/aab13de47b7a8566a90875a1722c6e9a.jpg" alt="ubuntu 14.04 ndk 编译 openssl"><br /><strong>编译生成</strong><br /> 命令：<br /> make<br /> make install</p> <p><strong>Android.mk文件</strong></p> <p>LOCAL_PATH := $(call my-dir)</p> <p>#APP_ABI := armeabi armeabi-v7a<br /> APP_PLATFORM := android-24</p> <p>include $(CLEAR_VARS)<br /> LOCAL_LDLIBS := -llog<br /> LOCAL_MODULE := ExchangePosJNI<br /> LOCAL_SRC_FILES := ExchangePosJNI.c</p> <p>include $(BUILD_SHARED_LIBRARY)</p> <p>include $(CLEAR_VARS)<br /> LOCAL_MODULE := libcrypto<br /> LOCAL_SRC_FILES := $(LOCAL_PATH)/lib/libcrypto.a<br /> include $(PREBUILT_STATIC_LIBRARY)</p> <p>include $(CLEAR_VARS)<br /> LOCAL_MODULE := libssl<br /> LOCAL_SRC_FILES := $(LOCAL_PATH)/lib/libssl.a<br /> include $(PREBUILT_STATIC_LIBRARY)</p> <p>include $(CLEAR_VARS)<br /> LOCAL_C_INCLUDES := $(LOCAL_PATH)/include $(LOCAL_PATH)/lib<br /> LOCAL_LDLIBS := -lm -lz -llog -fPIE -ldl<br /> LOCAL_CFLAGS += -fPIE -D__ANDROID_API__=24<br /> LOCAL_STATIC_LIBRARIES := libssl libcrypto<br /> LOCAL_MODULE := OpensslClient<br /> LOCAL_SRC_FILES := OpensslClient.c SSLClient.cpp</p> <p>include $(BUILD_SHARED_LIBRARY)</p> <p>在Windows NDK，使用一样的NDK版本，即android-ndk-r16，编译报错：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221113/c55b5551ef99632b78da7cc081446512.jpg" alt="ubuntu 14.04 ndk 编译 openssl"><br /> 将应用，build.gradle中 minSdkVersion 15改成 minSdkVersion 24才通过，其他地方解释说这个宏定义在NDK不同版本中差异造成的。</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-33304.htm">送养一个孩子怎样写协议书范本呢（送养孩子如何办理手续）</a></p>
+                                        <p>下一个：<a href="/news/article-33792.htm">被打了疫苗的动物抓伤需要打狂犬疫苗吗多少钱（动物打过狂犬疫苗被抓还需要打吗）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-27177.htm" title="python向hive插入数据遇到的坑">python向hive插入数据遇到的坑</a></li>
+                        <li class="py-2"><a href="/news/article-33791.htm" title="ubuntu 14.04 ndk 编译 openssl">ubuntu 14.04 ndk 编译 openssl</a></li>
+                        <li class="py-2"><a href="/news/article-31306.htm" title="动物疫病预防控制中心能给狗狗打疫苗吗（动物防疫中心可以给宠物治病）">动物疫病预防控制中心能给狗狗打疫苗吗（动物防疫中心可以给宠物治病）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-3-free-node-subscribe.htm" title="11月3日→18.5M/S|2024年最新免费节点Free Mellow订阅链接地址">11月3日→18.5M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-25-free-high-speed-nodes.htm" title="12月25日→19.3M/S|2024年最新免费节点Free Mellow订阅链接地址">12月25日→19.3M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-29037.htm" title="中国农大动物医院怎么挂号（中国农业大学动物医院预约挂号验证码）">中国农大动物医院怎么挂号（中国农业大学动物医院预约挂号验证码）</a></li>
+                        <li class="py-2"><a href="/news/article-31887.htm" title="认证与授权流程与spring boot整合 spring security">认证与授权流程与spring boot整合 spring security</a></li>
+                        <li class="py-2"><a href="/news/article-19799.htm" title="python 列表 mysql in_python 解决mysql where in 对列表(list,,array)问题">python 列表 mysql in_python 解决mysql where in 对列表(list,,array)问题</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-22-free-node-subscribe.htm" title="11月22日→23M/S|2024年最新免费节点Free Mellow订阅链接地址">11月22日→23M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-23921.htm" title="动物医院英文缩写是什么意思 动物医院英文缩写是什么意思啊">动物医院英文缩写是什么意思 动物医院英文缩写是什么意思啊</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End Wellcome Section-->
+                <!--main-footer-area-->
+        <footer class="main-footer-area" style="background: url(images/background/3.jpg);">
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="copyright-text text-center">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                        <p>
+                            <a href="/">Free Mellow免费机场订阅节点官网</a> 版权所有
+                            <br />
+                            Powered by WordPress
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--End main-footer-area-->
+        <!--Scroll to top-->
+        <div class="scroll-to-top scroll-to-target" data-target=".header-top"><span class="icon fa fa-angle-up"></span></div>
+        <script src="/assets/website/js/frontend/freemellow/jquery.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/jquery.fancybox.pack.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/jquery.fancybox-media.js"></script>
+        <!--<script src="/assets/website/js/frontend/freemellow/html5lightbox.js"></script>-->
+        <!-- revolution slider js -->
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/jquery.themepunch.tools.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/jquery.themepunch.revolution.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.video.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/owl.carousel.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/wow.js"></script>
+        <!-- bxslider -->
+        <script src="/assets/website/js/frontend/freemellow/bxslider.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/jquery.countTo.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/script.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!--End pagewrapper-->
+</body>
+
+</html>
