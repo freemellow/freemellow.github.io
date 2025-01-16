@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freemellow.github.io/news/article-41089.htm" />
+    <meta charset="utf-8">
+    <title>C#  iText 7 切分PDF，处理PDF页面大小_在线工具</title>
+        <meta name="description" content="一、itext 我要使用itext做一个pdf的页面大小一致性处理，然后再根据数据切分出需要的pdf. iText的官网有关于它的介绍，https://itextpdf.com/ 然后在官网可以查找a" />
+        <link rel="icon" href="/assets/website/img/freemellow/favicon.ico" type="image/x-icon"/>
+    <!-- Stylesheets -->
+    <link href="/assets/website/css/freemellow/bootstrap.css" rel="stylesheet">
+    <link href="/assets/website/css/freemellow/responsive.css" rel="stylesheet">
+    <link href="/assets/website/css/freemellow/style.css" rel="stylesheet">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- mobile responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1J70V33BC1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1J70V33BC1');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="page-wrapper">
+                <!-- Preloader -->
+        <div class="preloader"></div>
+        <!-- Preloader -->
+        <!--Main Header-->
+        <header class="main-header-block sticky-header">
+            <div class="container">
+                <div class="logo">
+                    <figure> 
+                        <a href="/">
+                                                        <span>Free Mellow</span>
+                                                    </a>
+                    </figure>
+                </div>
+                <div class="header-area clearfix">
+                    <nav class="main-menu-navigation">
+                        <div class="navbar-header">
+                            <!-- Toggle Button -->
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                        </div>
+                        <div class="navbar-collapse collapse clearfix">
+                            <ul class="navigation clearfix">
+                                                                <li><a href="/">首页</a></li>
+                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                <li><a href="#">关于</a></li>
+                                <li><a href="#">联系</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <!--End Main Header -->
+        <!--Page Title-->
+        <section class="page-title">
+            <div class="container clearfix text-center">
+                <div class="title">
+                    <h1>C#  iText 7 切分PDF，处理PDF页面大小_在线工具</h1>
+                </div>
+                <ul class="title-manu">
+                    <li><a href="/">首页</a></li>
+                    <li>-</li>
+                    <li><a href="/news/">新闻资讯</a></li>
+                    <li>-</li>
+                    <li>正文</li>
+                </ul>
+            </div>
+        </section>
+        <!--End Page Title-->
+        <!--Wellcome Section-->
+        <section class="wellcome-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<h2 id="一itext">一、itext</h2> <p>我要使用itext做一个pdf的页面大小一致性处理，然后再根据数据切分出需要的pdf.</p> <p>iText的官网有关于它的介绍，<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://itextpdf.com/"  target="_blank" rel="nofollow">https://itextpdf.com/</a> 然后在官网可以查找api文档https://api.itextpdf.com/。</p> <p>其中我要使用的是itext7+,主要在<code>iText.Kernel.Pdf</code> 命名空间下。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/0d04709ac5ccd915ee25c4f317e2c636.jpg" alt="C#  iText 7 切分PDF，处理PDF页面大小_在线工具"></p> <h2 id="二处理pdf页面大小一致">二、处理PDF页面大小一致</h2> <p>由于原始PDF 是扫描图片合成来的，有些页面扫描的图片规格不一致，导致pdf阅读性很差。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/a9e9a75b66dab8ce1844a320b2ceae8d.jpg" alt="C#  iText 7 切分PDF，处理PDF页面大小_在线工具"></p> <p>对于这个pdf我进行处理，首先是在nuget 里面搜索 itext 进行安装，使用itext7。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/c36764e1356d2d6b37950f1363d8eb8c.jpg" alt="C#  iText 7 切分PDF，处理PDF页面大小_在线工具"></p> <p>处理PDF大小方法：</p> <pre><code>        public void RestPageSize(string sourcePdfPath, string outputPdfPath)         {             PdfReader pdfReader = null;             PdfDocument pdfDocument = null;             PdfWriter pdfWriter = null;             PdfDocument outPDfDoc = null;             try             {                 pdfReader = new PdfReader(sourcePdfPath);                 pdfDocument = new PdfDocument(pdfReader);                 var outDir = System.IO.Path.GetDirectoryName(outputPdfPath);                 if (!Directory.Exists(outDir))                 {                     Directory.CreateDirectory(outDir);                 }                  pdfWriter = new PdfWriter(outputPdfPath);                 outPDfDoc = new PdfDocument(pdfWriter);                  outPDfDoc.SetDefaultPageSize(PageSize.A3);                   for (int i = 1; i &lt; pdfDocument.GetNumberOfPages() + 1; i++)                 {                     var page = pdfDocument.GetPage(i);                     var formXObject = page.CopyAsFormXObject(outPDfDoc);                     var xPercent = PageSize.A3.GetWidth() / page.GetPageSize().GetWidth();                     var yPercent = PageSize.A3.GetHeight() / page.GetPageSize().GetHeight();                     PdfCanvas pdfCanvas = new PdfCanvas(outPDfDoc.AddNewPage());                     pdfCanvas.AddXObjectWithTransformationMatrix(formXObject, xPercent, 0, 0, yPercent, 0, 0);                 }                  pdfWriter.Flush();              }             catch (Exception ex)             {                 Console.WriteLine(ex);             }             finally             {                 if (pdfReader != null)                 {                     pdfReader.Close();                 }                 if (pdfDocument != null)                 {                     pdfDocument.Close();                 }                 if (outPDfDoc != null)                 {                     outPDfDoc.Close();                 }                 if (pdfWriter != null)                 {                     pdfWriter.Close();                     pdfWriter.Dispose();                 }             }</code></pre> <p>思路：遍历原来的PDF页码，将原来的PDF页码对象拷贝<code>PdfFormXObject</code>到要生成的PDF文档中，首先要copy页面对象才能使用，不然直接获取的page对象是原来文档的，我们无法操作。</p> <pre><code>var formXObject = page.CopyAsFormXObject(outPDfDoc);</code></pre> <p>然后对页面进行缩放计算，我们新的PDF默认设置成A3大小，通过计算原始页面和新页面宽高比例进行缩放。</p> <p>计算完成后，在新文档中使用<code>PdfCanvas</code> 对象新添加一页，然后将<code>PdfFormXObject</code> 写入到新添加的页中。</p> <p>处理后的PDF:</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/92dc8d1ef004ffd919be8e24c753a2ac.jpg" alt="C#  iText 7 切分PDF，处理PDF页面大小_在线工具"></p> <h2 id="三切分pdf">三、切分PDF</h2> <p>切分PDF 就比较简单了，直接从原始文件中拷贝页面到新PDF文档中就行了。</p> <p>切分PDF 方法：</p> <pre><code>        public void ExtractPages(string sourcePdfPath, string outputPdfPath, int startPage, int endPage)         {             PdfReader pdfReader = null;             PdfDocument pdfDocument = null;             PdfWriter pdfWriter = null;             PdfDocument outPDfDoc = null;             try             {                 pdfReader = new PdfReader(sourcePdfPath);                 pdfDocument = new PdfDocument(pdfReader);                 var outDir = Path.GetDirectoryName(outputPdfPath);                 if (!Directory.Exists(outDir))                 {                     Directory.CreateDirectory(outDir);                 }                                  pdfWriter = new PdfWriter(outputPdfPath);                 outPDfDoc = new PdfDocument(pdfWriter);                  pdfDocument.CopyPagesTo(startPage, endPage, outPDfDoc);                 pdfWriter.Flush();              }             catch (Exception ex)             {                 Console.WriteLine(ex);              }             finally             {                 if (pdfReader != null)                 {                     pdfReader.Close();                 }                 if (pdfDocument != null)                 {                     pdfDocument.Close();                 }                 if (outPDfDoc != null)                 {                     outPDfDoc.Close();                 }                  if (pdfWriter != null)                 {                     pdfWriter.Close();                     pdfWriter.Dispose();                 }             }          }</code></pre> <p>注意：对写入流要进行<code>pdfWriter.Flush()</code>将缓冲区数据写入PDF后再关。</p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-40592.htm">被猫爪子勾了一下破皮没出血没打疫苗（被猫爪子轻微勾了一下,没有痕迹）</a></p>
+                                        <p>下一个：<a href="/news/article-41091.htm">宠物美容师（宠物美容师资格证怎么考）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-41585.htm" title="宠物领养系统论文总结（宠物领养系统国内外现状）">宠物领养系统论文总结（宠物领养系统国内外现状）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-29-free-high-speed-nodes.htm" title="10月29日→18.8M/S|2024年最新免费节点Free Mellow订阅链接地址">10月29日→18.8M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-24-free-high-speed-nodes.htm" title="11月24日→19.3M/S|2024年最新免费节点Free Mellow订阅链接地址">11月24日→19.3M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-32356.htm" title="动物医院手术室设备介绍 动物医院手术室设备介绍图片">动物医院手术室设备介绍 动物医院手术室设备介绍图片</a></li>
+                        <li class="py-2"><a href="/news/article-21731.htm" title="上海宠物领养救助基地电话号码（上海地区宠物领养）">上海宠物领养救助基地电话号码（上海地区宠物领养）</a></li>
+                        <li class="py-2"><a href="/news/article-23003.htm" title="动物疫苗的作用原理和方法有哪些 动物疫苗的作用原理和方法有哪些呢">动物疫苗的作用原理和方法有哪些 动物疫苗的作用原理和方法有哪些呢</a></li>
+                        <li class="py-2"><a href="/news/article-32842.htm" title="广州市宠物领养中心在哪里（广州哪里有宠物领养中心）">广州市宠物领养中心在哪里（广州哪里有宠物领养中心）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-2-free-node-subscribe.htm" title="1月2日→19.8M/S|2025年最新免费节点Free Mellow订阅链接地址">1月2日→19.8M/S|2025年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-18-free-node-subscribe-links.htm" title="12月18日→18.7M/S|2024年最新免费节点Free Mellow订阅链接地址">12月18日→18.7M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-32357.htm" title="广州宠物领养平台有哪些地方可以用（广州宠物领养公众号）">广州宠物领养平台有哪些地方可以用（广州宠物领养公众号）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">48</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End Wellcome Section-->
+                <!--main-footer-area-->
+        <footer class="main-footer-area" style="background: url(images/background/3.jpg);">
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="copyright-text text-center">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                        <p>
+                            <a href="/">Free Mellow免费机场订阅节点官网</a> 版权所有
+                            <br />
+                            Powered by WordPress
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--End main-footer-area-->
+        <!--Scroll to top-->
+        <div class="scroll-to-top scroll-to-target" data-target=".header-top"><span class="icon fa fa-angle-up"></span></div>
+        <script src="/assets/website/js/frontend/freemellow/jquery.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/jquery.fancybox.pack.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/jquery.fancybox-media.js"></script>
+        <!--<script src="/assets/website/js/frontend/freemellow/html5lightbox.js"></script>-->
+        <!-- revolution slider js -->
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/jquery.themepunch.tools.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/jquery.themepunch.revolution.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.video.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/owl.carousel.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/wow.js"></script>
+        <!-- bxslider -->
+        <script src="/assets/website/js/frontend/freemellow/bxslider.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/jquery.countTo.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/script.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!--End pagewrapper-->
+</body>
+
+</html>
