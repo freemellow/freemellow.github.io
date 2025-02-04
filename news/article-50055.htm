@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freemellow.github.io/news/article-50055.htm" />
+    <meta charset="utf-8">
+    <title>Python基础：理解SQL注入问题的起因，掌握pymysql参数化防止黑客使用SQL注入浸入系统和拖库</title>
+        <meta name="description" content="1、首先我们了解一下什么叫SQL注入问题 SQL注入是一个很古老的系统安全问题，黑客可以通过构造字符串，尝试改变实际执行的SQL语句，从而达到绕过系统认证，或者提取系统中自己没有权限的数据来脱库。出现" />
+        <link rel="icon" href="/assets/website/img/freemellow/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Free Mellow免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://freemellow.github.io/news/article-50055.htm" />
+    <meta property="og:site_name" content="Free Mellow免费机场订阅节点官网" />
+    <meta property="og:title" content="Python基础：理解SQL注入问题的起因，掌握pymysql参数化防止黑客使用SQL注入浸入系统和拖库" />
+    <meta property="og:image" content="https://freemellow.github.io/uploads/20240925-1/1a8b5b15be7254354106f94120c88aa9.webp" />
+        <meta property="og:release_date" content="2025-02-02T09:28:00" />
+    <meta property="og:updated_time" content="2025-02-02T09:28:00" />
+        <meta property="og:description" content="1、首先我们了解一下什么叫SQL注入问题 SQL注入是一个很古老的系统安全问题，黑客可以通过构造字符串，尝试改变实际执行的SQL语句，从而达到绕过系统认证，或者提取系统中自己没有权限的数据来脱库。出现" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Python基础：理解SQL注入问题的起因，掌握pymysql参数化防止黑客使用SQL注入浸入系统和拖库">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com">
+    
+    <!-- Stylesheets -->
+    <link href="/assets/website/css/freemellow/bootstrap.css" rel="stylesheet">
+    <link href="/assets/website/css/freemellow/responsive.css" rel="stylesheet">
+    <link href="/assets/website/css/freemellow/style.css" rel="stylesheet">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- mobile responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1J70V33BC1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1J70V33BC1');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="page-wrapper">
+                <!-- Preloader -->
+        <div class="preloader"></div>
+        <!-- Preloader -->
+        <!--Main Header-->
+        <header class="main-header-block sticky-header">
+            <div class="container">
+                <div class="logo">
+                    <figure> 
+                        <a href="/">
+                                                        <span>Free Mellow</span>
+                                                    </a>
+                    </figure>
+                </div>
+                <div class="header-area clearfix">
+                    <nav class="main-menu-navigation">
+                        <div class="navbar-header">
+                            <!-- Toggle Button -->
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                        </div>
+                        <div class="navbar-collapse collapse clearfix">
+                            <ul class="navigation clearfix">
+                                                                <li><a href="/">首页</a></li>
+                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                <li><a href="#">关于</a></li>
+                                <li><a href="#">联系</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <!--End Main Header -->
+        <!--Page Title-->
+        <section class="page-title">
+            <div class="container clearfix text-center">
+                <div class="title">
+                    <h1>Python基础：理解SQL注入问题的起因，掌握pymysql参数化防止黑客使用SQL注入浸入系统和拖库</h1>
+                </div>
+                <ul class="title-manu">
+                    <li><a href="/">首页</a></li>
+                    <li>-</li>
+                    <li><a href="/news/">新闻资讯</a></li>
+                    <li>-</li>
+                    <li>正文</li>
+                </ul>
+            </div>
+        </section>
+        <!--End Page Title-->
+        <!--Wellcome Section-->
+        <section class="wellcome-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <h2>1、首先我们了解一下什么叫SQL注入问题</h2> <p style="text-indent:33px;">SQL注入是一个很古老的系统安全问题，黑客可以通过构造字符串，尝试改变实际执行的SQL语句，从而达到绕过系统认证，或者提取系统中自己没有权限的数据来脱库。出现这个问题的根本原因是开发者在使用SQL的时候，采用的是拼接字符串的方式来实现SQL语句的参数传值，当然这种问题在ORM框架盛行的今天其实出现概率已经很小了，具体例子如下：</p> <ul> <li> <p><strong>SQL注入绕过认证原理，如下代码就存在绕过认证的安全问题：</strong></p> </li> </ul> <ul> <li> <p><strong>正常情况下，使用正确和错误的用户名和密码都能够限制认证</strong></p> </li> </ul> <p>&nbsp; &nbsp; &nbsp; &nbsp;数库数据：</p> <p><img fetchpriority="high" decoding="async" alt="" height="114" src="http://img.555519.xyz/uploads/20221230/f554d47cd0d9ffd36701f000d01933e6.jpg"></p> <pre><code class="language-python"># 建立数据库连接 def login(userName, userPwd):     connection = pymysql.connect(host='127.0.0.1', user='root', password="root",                                  database='newtest', port=3306, charset='utf8')     # 获取游标对象     cursor = connection.cursor()     # sql = "select * from t_user where username='%s' and userpwd='%s'" % (userName, userPwd)     sql = "select * from t_user where username='"+ userName +"' and userpwd='" + userPwd +"'"     print(sql)     # 执行查询操作     result = cursor.execute(sql)     connection.commit()     userInfo = cursor.fetchone()     connection.close() #     return userInfo</code></pre> <pre><code class="language-python"># 普通登录，正确的用户名和密码登录成功 user = login('xiaojiejie', '123456') if user:     print("登录成功")  # 普通登录，错误的用户名或密码登录失败 user = login('xiaojiejie', '111111') if user:     print("登录成功") else:     print("登录失败")</code></pre> <p style="text-indent:33px;">如下，第一次正确的用户名和密码，提示成功，第二密码是错误的，提示失败</p> <p><img decoding="async" alt="" height="136" src="http://img.555519.xyz/uploads/20221230/770ca07e59541d0c4b44cf8e622d3812.jpg"></p> <ul> <li><strong>SQL注入情况，通过传入特殊构造的参数，从而达到改变实际执行SQL语句绕过认证的目的</strong></li> </ul> <pre><code class="language-python"># 构造特殊的字符串，达到SQL注入的目的 user = login("xiaojiejie", "1' or '1'='1") if user:     print("绕过认证，登录成功") else:     print("登录失败")</code></pre> <p style="text-indent:33px;">以上在传入参数的时候，密码特殊处理了，1' or '1'='1，从而使得密码和原始SQL在字符串拼接的时候，构成了如下的SQL</p> <pre><code class="language-sql">select * from t_user where username='xiaojiejie' and userpwd='1' or '1'='1'</code></pre> <p style="text-indent:33px;">引入&nbsp;or '1'='1'是恒成真的，所以可以绕过认证。</p> <p style="text-indent:33px;"><strong>问题的根本原因就在于SQL语句：</strong></p> <p style="text-indent:33px;"><strong><span style="color:#f33b45;">&nbsp;sql = "select * from t_user where username='"+ userName +"' and userpwd='" + userPwd +"'"&nbsp;</span></strong></p> <p style="text-indent:33px;"><span style="color:#f33b45;"><strong>是通过字符串拼接出来的，这样就让一些别有用心的人有机可趁。</strong></span></p> <p style="text-indent:33px;">&nbsp;</p> <h2 style="text-indent:0px;">2、SQL语句参数化是解决这类问题的通用方案</h2> <p style="text-indent:33px;">SQL语句参数化是数据库技术里通用的解决SQL注入的最佳解决方案，其实就是在程序向数据库发送SQL执行的时候将SQL语句和参数分开传递，需要补充的动态参数在SQL语句中使用占位符占位，然后在数据库端在填入参数执行，这样既规避了SQL注入的问题，同时也一定程度提高了数据库执行SQL的效率。就像Java中JDBC支持preparedStatement，Python也支持SQL参数化。实现如下：</p> <pre><code class="language-python">def loginParams(params=[]):     connection = pymysql.connect(host='127.0.0.1', user='root', password="root",                                  database='newtest', port=3306, charset='utf8')     # 获取游标对象     cursor = connection.cursor()     sql = "select * from t_user where username=%s and userpwd=%s"     print(sql)     # 执行查询操作     result = cursor.execute(sql, params)     connection.commit()     userInfo = cursor.fetchone()     connection.close() #     return userInfo </code></pre> <ul> <li> <h3 style="text-indent:33px;">再次尝试绕过认证：</h3> </li> </ul> <pre><code class="language-python"># 构造特殊的字符串，参数化后无法达到SQL注入的目的 user = loginParams(["xiaojiejie", "1' or '1'='1"]) print(user) if user:     print("绕过认证，登录成功") else:     print("绕过认证，登录失败")</code></pre> <p><strong>绕过失败：</strong></p> <p><img decoding="async" alt="" height="101" src="http://img.555519.xyz/uploads/20221230/85b0d097813cc7188d43ea82f7accff5.jpg"></p> </h1> <p style="text-indent:33px;">通常Web系统都可以使用id来获得用户的个人信息，那么如果要看到别人的个人信息或者系统中所有用户的信息，就是一个拖库方法，SQL具有采用字符串拼接也会引起这样的安全问题，例如：</p> <pre><code class="language-python">def profile(userId):     connection = pymysql.connect(host='127.0.0.1', user='root', password="root",                                  database='newtest', port=3306, charset='utf8')     # 获取游标对象     cursor = connection.cursor()     sql = "select * from t_user where userid=" +str(userId)     print(sql)     # 执行查询操作     result = cursor.execute(sql)     connection.commit()     userInfo = cursor.fetchall()     connection.close()  #     return userInfo     pass  userInfo = profile(1) print(userInfo)</code></pre> <p style="text-indent:33px;">根据个人userid能够读取自己的信息</p> <p style="text-indent:33px;"><img loading="lazy" decoding="async" alt="" height="69" src="http://img.555519.xyz/uploads/20221230/bdd2e54851648fbc671eacb23bbf8ee6.jpg"></p> <p style="text-indent:33px;">对于一个普通用户来说，他并不具读取其他用户的个人信息的权限，我们改一下参数：</p> <pre><code class="language-python"># 越权读取了表中全部用户的信息 userInfo = profile("1 or 1=1") print(userInfo)</code></pre> <p style="text-indent:0;"><img loading="lazy" decoding="async" alt="" height="160" src="http://img.555519.xyz/uploads/20221230/4e4e28f14ea1dcc310195346c4b64430.jpg"></p> <p style="text-indent:33px;">以上可以看到执行的通过传入的参数，实际执行的SQL是：</p> <p style="text-indent:33px;">select * from t_user where userid=1 or 1=1</p> <p style="text-indent:33px;">从而实现了拖库，是不是很危险</p> </h1> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-50054.htm">spring boot actuator监控详细介绍一(超级详细)</a></p>
+                                        <p>下一个：<a href="/news/article-50577.htm">FreeRTOS进阶列表和列表项示例分析_操作系统</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-32840.htm" title="宠物领养协议文案怎么写啊 宠物领养协议文案怎么写啊图片">宠物领养协议文案怎么写啊 宠物领养协议文案怎么写啊图片</a></li>
+                        <li class="py-2"><a href="/news/article-48402.htm" title="三国杀台词彩蛋（三国杀台词鉴赏）">三国杀台词彩蛋（三国杀台词鉴赏）</a></li>
+                        <li class="py-2"><a href="/news/article-21731.htm" title="上海宠物领养救助基地电话号码（上海地区宠物领养）">上海宠物领养救助基地电话号码（上海地区宠物领养）</a></li>
+                        <li class="py-2"><a href="/news/article-21732.htm" title="宠物领养电子合同模板怎么写（宠物领养合同内容）">宠物领养电子合同模板怎么写（宠物领养合同内容）</a></li>
+                        <li class="py-2"><a href="/news/article-41089.htm" title="C#  iText 7 切分PDF，处理PDF页面大小_在线工具">C#  iText 7 切分PDF，处理PDF页面大小_在线工具</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-13-free-node-subscribe.htm" title="11月13日→20.8M/S|2024年最新免费节点Free Mellow订阅链接地址">11月13日→20.8M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-25781.htm" title="猫粮十大品牌（猫粮十大品牌排）">猫粮十大品牌（猫粮十大品牌排）</a></li>
+                        <li class="py-2"><a href="/news/article-29037.htm" title="中国农大动物医院怎么挂号（中国农业大学动物医院预约挂号验证码）">中国农大动物医院怎么挂号（中国农业大学动物医院预约挂号验证码）</a></li>
+                        <li class="py-2"><a href="/news/article-47519.htm" title=".NET桌面程序集成Web网页开发的十种解决方案_在线工具">.NET桌面程序集成Web网页开发的十种解决方案_在线工具</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-20-node-share.htm" title="11月20日→22.8M/S|2024年最新免费节点Free Mellow订阅链接地址">11月20日→22.8M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">12</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End Wellcome Section-->
+                <!--main-footer-area-->
+        <footer class="main-footer-area" style="background: url(images/background/3.jpg);">
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="copyright-text text-center">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                        <p>
+                            <a href="/">Free Mellow免费机场订阅节点官网</a> 版权所有
+                            <br />
+                            Powered by WordPress
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--End main-footer-area-->
+        <!--Scroll to top-->
+        <div class="scroll-to-top scroll-to-target" data-target=".header-top"><span class="icon fa fa-angle-up"></span></div>
+        <script src="/assets/website/js/frontend/freemellow/jquery.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/jquery.fancybox.pack.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/jquery.fancybox-media.js"></script>
+        <!--<script src="/assets/website/js/frontend/freemellow/html5lightbox.js"></script>-->
+        <!-- revolution slider js -->
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/jquery.themepunch.tools.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/jquery.themepunch.revolution.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.video.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/owl.carousel.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/wow.js"></script>
+        <!-- bxslider -->
+        <script src="/assets/website/js/frontend/freemellow/bxslider.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/jquery.countTo.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/script.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!--End pagewrapper-->
+</body>
+
+</html>

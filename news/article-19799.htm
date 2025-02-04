@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html xml:lang="zh-CN" lang="zh-CN">
 
 <head>
         <link rel="canonical" href="https://freemellow.github.io/news/article-19799.htm" />
@@ -7,6 +7,34 @@
     <title>python 列表 mysql in_python 解决mysql where in 对列表(list,,array)问题</title>
         <meta name="description" content="例如有这么一个查询语句： select * from server where ip in (....) 同时一个存放ip 的列表 ：["1.1.1.1","2.2.2.2","2.2.2.2"] 我" />
         <link rel="icon" href="/assets/website/img/freemellow/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Free Mellow免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://freemellow.github.io/news/article-19799.htm" />
+    <meta property="og:site_name" content="Free Mellow免费机场订阅节点官网" />
+    <meta property="og:title" content="python 列表 mysql in_python 解决mysql where in 对列表(list,,array)问题" />
+    <meta property="og:image" content="https://freemellow.github.io/uploads/20240925-1/f5851330e9136110ff8956e5ecfe7232.webp" />
+        <meta property="og:release_date" content="2024-12-01T10:01:25" />
+    <meta property="og:updated_time" content="2024-12-01T10:01:25" />
+        <meta property="og:description" content="例如有这么一个查询语句： select * from server where ip in (....) 同时一个存放ip 的列表 ：["1.1.1.1","2.2.2.2","2.2.2.2"] 我" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="python 列表 mysql in_python 解决mysql where in 对列表(list,,array)问题">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com">
+    
     <!-- Stylesheets -->
     <link href="/assets/website/css/freemellow/bootstrap.css" rel="stylesheet">
     <link href="/assets/website/css/freemellow/responsive.css" rel="stylesheet">
@@ -99,16 +127,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-11-28-free-subscribe-node.htm" title="11月28日→18.2M/S|2024年最新免费节点Free Mellow订阅链接地址">11月28日→18.2M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-23005.htm" title="开一家宠物店大概需要投资多少钱（宠物美容学费一般多少）">开一家宠物店大概需要投资多少钱（宠物美容学费一般多少）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-3-node-share-links.htm" title="10月3日→20.5M/S|2024年最新免费节点Free Mellow订阅链接地址">10月3日→20.5M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-4-node-share-links.htm" title="11月4日→19.8M/S|2024年最新免费节点Free Mellow订阅链接地址">11月4日→19.8M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-19798.htm" title="Springboot 整合 xxljob 动态API调度任务(进阶篇)">Springboot 整合 xxljob 动态API调度任务(进阶篇)</a></li>
-                        <li class="py-2"><a href="/news/article-25778.htm" title="三国杀里面限定技（三国杀限定技能是什么意思）">三国杀里面限定技（三国杀限定技能是什么意思）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-21-node-share.htm" title="11月21日→19.5M/S|2024年最新免费节点Free Mellow订阅链接地址">11月21日→19.5M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
                         <li class="py-2"><a href="/free-nodes/2024-11-12-node-share-links.htm" title="11月12日→22.2M/S|2024年最新免费节点Free Mellow订阅链接地址">11月12日→22.2M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-25321.htm" title="猫咪接种的三针疫苗分别什么（猫打三针疫苗啊分别是哪三针）">猫咪接种的三针疫苗分别什么（猫打三针疫苗啊分别是哪三针）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-28-node-share.htm" title="12月28日→18.5M/S|2024年最新免费节点Free Mellow订阅链接地址">12月28日→18.5M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-13-free-node-subscribe-links.htm" title="12月13日→19.3M/S|2024年最新免费节点Free Mellow订阅链接地址">12月13日→19.3M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-19798.htm" title="Springboot 整合 xxljob 动态API调度任务(进阶篇)">Springboot 整合 xxljob 动态API调度任务(进阶篇)</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-27-node-share-links.htm" title="12月27日→20.5M/S|2024年最新免费节点Free Mellow订阅链接地址">12月27日→20.5M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-24358.htm" title="猫三联加狂犬疫苗一共几针,多少钱一针（猫三联和狂犬疫苗间隔多久打一次）">猫三联加狂犬疫苗一共几针,多少钱一针（猫三联和狂犬疫苗间隔多久打一次）</a></li>
+                        <li class="py-2"><a href="/news/article-41585.htm" title="宠物领养系统论文总结（宠物领养系统国内外现状）">宠物领养系统论文总结（宠物领养系统国内外现状）</a></li>
+                        <li class="py-2"><a href="/news/article-42594.htm" title="瑞派宠物医院工作时间（瑞派宠物医院住宿环境）">瑞派宠物医院工作时间（瑞派宠物医院住宿环境）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-31-free-high-speed-nodes.htm" title="12月31日→22.2M/S|2025年最新免费节点Free Mellow订阅链接地址">12月31日→22.2M/S|2025年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-40592.htm" title="被猫爪子勾了一下破皮没出血没打疫苗（被猫爪子轻微勾了一下,没有痕迹）">被猫爪子勾了一下破皮没出血没打疫苗（被猫爪子轻微勾了一下,没有痕迹）</a></li>
+                        <li class="py-2"><a href="/news/article-37141.htm" title="Nacos服务发现基础应用">Nacos服务发现基础应用</a></li>
                     </ul>
     </div>
 </div>
@@ -120,19 +148,16 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
             </li>
                     </ul>
     </div>
