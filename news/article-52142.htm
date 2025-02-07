@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freemellow.github.io/news/article-52142.htm" />
+    <meta charset="utf-8">
+    <title>vue在进行增删改操作后刷新页面</title>
+        <meta name="description" content="问题 通常在后台管理项目中，对数据进行增删改查是常规操作。在进行这些操作后，需要手动刷新才能更新列表。本文主要讨论进行增删改查相关操作后如何使当前页面显示操作后的最新数据。  解决方案 || 以删除为" />
+        <link rel="icon" href="/assets/website/img/freemellow/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Free Mellow免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://freemellow.github.io/news/article-52142.htm" />
+    <meta property="og:site_name" content="Free Mellow免费机场订阅节点官网" />
+    <meta property="og:title" content="vue在进行增删改操作后刷新页面" />
+    <meta property="og:image" content="https://freemellow.github.io/uploads/20240925-1/f5851330e9136110ff8956e5ecfe7232.webp" />
+        <meta property="og:release_date" content="2025-02-06T05:29:44" />
+    <meta property="og:updated_time" content="2025-02-06T05:29:44" />
+        <meta property="og:description" content="问题 通常在后台管理项目中，对数据进行增删改查是常规操作。在进行这些操作后，需要手动刷新才能更新列表。本文主要讨论进行增删改查相关操作后如何使当前页面显示操作后的最新数据。  解决方案 || 以删除为" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="vue在进行增删改操作后刷新页面">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com">
+    
+    <!-- Stylesheets -->
+    <link href="/assets/website/css/freemellow/bootstrap.css" rel="stylesheet">
+    <link href="/assets/website/css/freemellow/responsive.css" rel="stylesheet">
+    <link href="/assets/website/css/freemellow/style.css" rel="stylesheet">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- mobile responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1J70V33BC1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1J70V33BC1');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="page-wrapper">
+                <!-- Preloader -->
+        <div class="preloader"></div>
+        <!-- Preloader -->
+        <!--Main Header-->
+        <header class="main-header-block sticky-header">
+            <div class="container">
+                <div class="logo">
+                    <figure> 
+                        <a href="/">
+                                                        <span>Free Mellow</span>
+                                                    </a>
+                    </figure>
+                </div>
+                <div class="header-area clearfix">
+                    <nav class="main-menu-navigation">
+                        <div class="navbar-header">
+                            <!-- Toggle Button -->
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                        </div>
+                        <div class="navbar-collapse collapse clearfix">
+                            <ul class="navigation clearfix">
+                                                                <li><a href="/">首页</a></li>
+                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                <li><a href="#">关于</a></li>
+                                <li><a href="#">联系</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <!--End Main Header -->
+        <!--Page Title-->
+        <section class="page-title">
+            <div class="container clearfix text-center">
+                <div class="title">
+                    <h1>vue在进行增删改操作后刷新页面</h1>
+                </div>
+                <ul class="title-manu">
+                    <li><a href="/">首页</a></li>
+                    <li>-</li>
+                    <li><a href="/news/">新闻资讯</a></li>
+                    <li>-</li>
+                    <li>正文</li>
+                </ul>
+            </div>
+        </section>
+        <!--End Page Title-->
+        <!--Wellcome Section-->
+        <section class="wellcome-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h2> <a id="_0" rel="nofollow"></a>问题</h2> <p>通常在后台管理项目中，对数据进行增删改查是常规操作。在进行这些操作后，需要手动刷新才能更新列表。本文主要讨论进行增删改查相关操作后如何使当前页面显示操作后的最新数据。</p> <h2> <a id="___3" rel="nofollow"></a>解决方案 || 以删除为例：</h2> <p>1.强制刷新：this.$forceUpdate()<br /> 2.使用window.reload( ) 或 router.go(0)，但会使整个浏览器进行重载，页面闪烁。<br /> 3.重新调用接口:但性能较差，代码冗长。<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221207/708f40bc45bafe613a2a5b5d6bf0c304.jpg" alt="vue在进行增删改操作后刷新页面"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20221207/8a2db264ce84503a99eb2aca26cf99f3.jpg" alt="vue在进行增删改操作后刷新页面"><br /> 4.provide / inject ：（推荐）<br /><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://cn.vuejs.org/v2/api/#provide-inject"  rel="nofollow">点此查看VUE官方解释</a>：<br /> 允许一个祖先组件向其所有子孙后代注入一个依赖，不论组件层次有多深，并在其上下游关系成立的时间里始终生效。</p> <ul> <li>首先在App.vue全局设置provide<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221207/3ea3db43a7938b61ca4b6da0153b3003.jpg" alt="vue在进行增删改操作后刷新页面"><img decoding="async" src="http://img.555519.xyz/uploads/20221207/7c87d57468246c87f50c5e846a7a5fb4.jpg" alt="vue在进行增删改操作后刷新页面"><img decoding="async" src="http://img.555519.xyz/uploads/20221207/8aeb732ba6964cccbfa100fddf81eeb6.jpg" alt="vue在进行增删改操作后刷新页面"> </li> <li>在需要刷新的操作页面内注入inject：[‘reload’]<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221207/856e6fc9d29882a684f89cf1d97d5768.jpg" alt="vue在进行增删改操作后刷新页面"> </li> <li>在调用接口操作成功后 this.reload( )</li> <li>比如在删除接口调用成功后：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221207/8bb0eac5abe095ba762fdcd1cfc60b03.jpg" alt="vue在进行增删改操作后刷新页面"> </li> </ul> <p>划重点</p> <ul> <li>provide：一个对象或返回一个对象的函数。该对象包含可注入其子孙的属性。</li> <li>inject：一个字符串数组，或一个对象，对象的 key 是本地的绑定名。</li> <li><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://cn.vuejs.org/v2/api/#vm-nextTick"  rel="nofollow">$nextTick（点击查看vue相关文档）</a></li> </ul> <p>除此之外，provide和inject的用法主要是：在父组件中通过provider来提供变量，然后在子组件中通过inject来注入变量。</p> <p>需要注意的是这里不论子组件有多深，只要调用了inject那么就可以注入provider中的数据。而不是局限于只能从当前父组件的prop属性来获取数据。</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-51642.htm">宠爱国际诊疗中心 宠爱国际诊疗中心 北京</a></p>
+                                        <p>下一个：<a href="/news/article-52144.htm">宠物用品包括哪些产品（宠物用品包括哪些产品类型）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-11-11-free-node-subscribe.htm" title="11月11日→18.8M/S|2024年最新免费节点Free Mellow订阅链接地址">11月11日→18.8M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-23005.htm" title="开一家宠物店大概需要投资多少钱（宠物美容学费一般多少）">开一家宠物店大概需要投资多少钱（宠物美容学费一般多少）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-21-node-share-links.htm" title="1月21日→18.3M/S|2025年最新免费节点Free Mellow订阅链接地址">1月21日→18.3M/S|2025年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-19-free-node-subscribe.htm" title="1月19日→18M/S|2025年最新免费节点Free Mellow订阅链接地址">1月19日→18M/S|2025年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-28-free-subscribe-node.htm" title="11月28日→18.2M/S|2024年最新免费节点Free Mellow订阅链接地址">11月28日→18.2M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-16-free-high-speed-nodes.htm" title="12月16日→22M/S|2024年最新免费节点Free Mellow订阅链接地址">12月16日→22M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-30946.htm" title="动物疫苗注射的作用有哪些呢（动物疫苗接种途径有哪些）">动物疫苗注射的作用有哪些呢（动物疫苗接种途径有哪些）</a></li>
+                        <li class="py-2"><a href="/news/article-41091.htm" title="宠物美容师（宠物美容师资格证怎么考）">宠物美容师（宠物美容师资格证怎么考）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-17-free-subscribe-node.htm" title="11月17日→20.5M/S|2024年最新免费节点Free Mellow订阅链接地址">11月17日→20.5M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-30943.htm" title="三国杀如何展示武将（三国杀如何展示武将皮肤）">三国杀如何展示武将（三国杀如何展示武将皮肤）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">21</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End Wellcome Section-->
+                <!--main-footer-area-->
+        <footer class="main-footer-area" style="background: url(images/background/3.jpg);">
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="copyright-text text-center">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                        <p>
+                            <a href="/">Free Mellow免费机场订阅节点官网</a> 版权所有
+                            <br />
+                            Powered by WordPress
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--End main-footer-area-->
+        <!--Scroll to top-->
+        <div class="scroll-to-top scroll-to-target" data-target=".header-top"><span class="icon fa fa-angle-up"></span></div>
+        <script src="/assets/website/js/frontend/freemellow/jquery.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/jquery.fancybox.pack.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/jquery.fancybox-media.js"></script>
+        <!--<script src="/assets/website/js/frontend/freemellow/html5lightbox.js"></script>-->
+        <!-- revolution slider js -->
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/jquery.themepunch.tools.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/jquery.themepunch.revolution.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.video.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/owl.carousel.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/wow.js"></script>
+        <!-- bxslider -->
+        <script src="/assets/website/js/frontend/freemellow/bxslider.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/jquery.countTo.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/script.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!--End pagewrapper-->
+</body>
+
+</html>

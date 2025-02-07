@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freemellow.github.io/news/article-51641.htm" />
+    <meta charset="utf-8">
+    <title>Vue各类组件之间传值的实现方式</title>
+        <meta name="description" content="1、父组件向子组件传值 首先在父组件定义好数据，接着将子组件导入到父组件中。父组件只要在调用子组件的地方使用v-bind指令定义一个属性，并传值在该属性中即可，此时父组件的使命完成，请看下面关键代码：" />
+        <link rel="icon" href="/assets/website/img/freemellow/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Free Mellow免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://freemellow.github.io/news/article-51641.htm" />
+    <meta property="og:site_name" content="Free Mellow免费机场订阅节点官网" />
+    <meta property="og:title" content="Vue各类组件之间传值的实现方式" />
+    <meta property="og:image" content="https://freemellow.github.io/uploads/20240925-1/82c12bc908106810ed96f31c9bd6c2a9.webp" />
+        <meta property="og:release_date" content="2025-02-05T08:20:57" />
+    <meta property="og:updated_time" content="2025-02-05T08:20:57" />
+        <meta property="og:description" content="1、父组件向子组件传值 首先在父组件定义好数据，接着将子组件导入到父组件中。父组件只要在调用子组件的地方使用v-bind指令定义一个属性，并传值在该属性中即可，此时父组件的使命完成，请看下面关键代码：" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Vue各类组件之间传值的实现方式">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com">
+    
+    <!-- Stylesheets -->
+    <link href="/assets/website/css/freemellow/bootstrap.css" rel="stylesheet">
+    <link href="/assets/website/css/freemellow/responsive.css" rel="stylesheet">
+    <link href="/assets/website/css/freemellow/style.css" rel="stylesheet">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- mobile responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1J70V33BC1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1J70V33BC1');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="page-wrapper">
+                <!-- Preloader -->
+        <div class="preloader"></div>
+        <!-- Preloader -->
+        <!--Main Header-->
+        <header class="main-header-block sticky-header">
+            <div class="container">
+                <div class="logo">
+                    <figure> 
+                        <a href="/">
+                                                        <span>Free Mellow</span>
+                                                    </a>
+                    </figure>
+                </div>
+                <div class="header-area clearfix">
+                    <nav class="main-menu-navigation">
+                        <div class="navbar-header">
+                            <!-- Toggle Button -->
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                        </div>
+                        <div class="navbar-collapse collapse clearfix">
+                            <ul class="navigation clearfix">
+                                                                <li><a href="/">首页</a></li>
+                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                <li><a href="#">关于</a></li>
+                                <li><a href="#">联系</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <!--End Main Header -->
+        <!--Page Title-->
+        <section class="page-title">
+            <div class="container clearfix text-center">
+                <div class="title">
+                    <h1>Vue各类组件之间传值的实现方式</h1>
+                </div>
+                <ul class="title-manu">
+                    <li><a href="/">首页</a></li>
+                    <li>-</li>
+                    <li><a href="/news/">新闻资讯</a></li>
+                    <li>-</li>
+                    <li>正文</li>
+                </ul>
+            </div>
+        </section>
+        <!--End Page Title-->
+        <!--Wellcome Section-->
+        <section class="wellcome-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h2> <a id="1_0" rel="nofollow"></a>1、父组件向子组件传值</h2> <p>首先在父组件定义好数据，接着将子组件导入到父组件中。父组件只要在调用子组件的地方使用v-bind指令定义一个属性，并传值在该属性中即可，此时父组件的使命完成，请看下面关键代码：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221230/fe52f63bdda976a501a2cb2f5464323b.jpg" alt="Vue各类组件之间传值的实现方式"><br /> 【解析】</p> <p>上面代码中是导入进来的子组件，content是被v-bind指令定义的属性，当然不用v-bind指令定义也一样可以。只不过加了V-bind指令后，属性值就会被当做JavaScript表达式来解析，而不加v-bind指令就会被当做字符串解析。比如Boolean="false"和:Boolean="false"解析出来的结果是不同滴。如果还是有点迷糊，请来看完整源码</p> <p>好了，下面我们来看看子组件此时要做的事情是什么？</p> <p>首先在子组件中要使用关键词props接收父组件传递过来的属性，然后直接对这个属性动手动脚就行了，十分简单，在这直接上完整源码：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221230/7797c06fca100b8930a171d7624b2185.jpg" alt="Vue各类组件之间传值的实现方式"></p> <h2> <a id="2_13" rel="nofollow"></a>2、子组件向父组件传值</h2> <p>子组件向父组件传值这一个技术点有个专业名词，叫做“发布订阅模式”，很明显在这里子组件为发布方，而父组件为订阅方。根据这个专业名词，我们来看看子组件里面发生的事情。首先，需要触发子组件视图层里的某个事件，接着由该事件触发的方法中又使用关键方法$emit()发布了一个自定义的事件，并且能够传入相关的参数。子组件所要的事情就只有这么多，下面我们看看核心源码：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221230/d9a416c3584e77217b7b393157b923e1.jpg" alt="Vue各类组件之间传值的实现方式"><br /> 【解析】</p> <p>上面代码中，当ChildrenOnclick方法被触发的时候，自定义了一个delete事件，并传入了相关参数this.index。这里是完整源码，能帮助你更好的理解。</p> <p>在父组件中，只要订阅由子组件发布的自定义事件即可。只要子组件的自定义事件被触发，那么父组件就会执行相关的方法，下面是核心代码：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221230/d2a9c37e25691313af5cb5527a24e7af.jpg" alt="Vue各类组件之间传值的实现方式"><br /> 【解析】<br /> 上面代码中，@delete是子组件自定义的事件，当该事件在子组件被触发的时候，那么handleParentClick这个方法就会被执行，请看完整的代码，以便更好的理解。</p> <h2> <a id="3_29" rel="nofollow"></a>3、兄弟组件传值</h2> <p>这块我还不是灰常明白，只是知道大概如何去实现。首先在由vue-cli搭建起来的项目中的main.js创建一个事件总线，也就是中转站，作为通信的桥梁。核心代码如下：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221230/3d393b32cfc9a001240ea419ab6691e6.jpg" alt="Vue各类组件之间传值的实现方式"><br /> main.js完整代码请点击哦。</p> <p>接着我们在发送方组件里面使用关键字$emit()定义一个自定义事件，并传入参数。核心代码如下：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221230/f0d8f3facd15da556d6d3545f03098c0.jpg" alt="Vue各类组件之间传值的实现方式"><br /> 【解析】<br /> 上面代码中，this.bus为在main.js里定义好的一个中转站变量，ReceiveMessage为自定义事件，this.message为定义好的参数，完整代码在此。</p> <p>最后是接收方组件，只要使用this.bus.$on关键字就能够监听到发送方触发的事件，并在内部通过一个函数接收传入进来的参数，执行相关的动作，下面请看完整代码：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221230/219d0ceab5229b5525212eef3451d211.jpg" alt="Vue各类组件之间传值的实现方式"></p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-51104.htm">本人长期上门回收宠物猫重庆（重庆长期上门收购狗）</a></p>
+                                        <p>下一个：<a href="/news/article-51642.htm">宠爱国际诊疗中心 宠爱国际诊疗中心 北京</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-44564.htm" title="合肥免费宠物救援中心（合肥宠物救援中心电话）">合肥免费宠物救援中心（合肥宠物救援中心电话）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-18-free-node-subscribe.htm" title="1月18日→19.8M/S|2025年最新免费节点Free Mellow订阅链接地址">1月18日→19.8M/S|2025年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-27-node-share-links.htm" title="11月27日→19.8M/S|2024年最新免费节点Free Mellow订阅链接地址">11月27日→19.8M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-49008.htm" title="宠物领养什么意思啊英文（领养宠物的定义）">宠物领养什么意思啊英文（领养宠物的定义）</a></li>
+                        <li class="py-2"><a href="/news/article-37141.htm" title="Nacos服务发现基础应用">Nacos服务发现基础应用</a></li>
+                        <li class="py-2"><a href="/news/article-26263.htm" title="兽用疫苗瓶如何处理,由什么部门监管（兽用疫苗厂）">兽用疫苗瓶如何处理,由什么部门监管（兽用疫苗厂）</a></li>
+                        <li class="py-2"><a href="/news/article-38618.htm" title="养猫的人容易得15种病怎么预防传染给猫（养猫容易感染什么病毒）">养猫的人容易得15种病怎么预防传染给猫（养猫容易感染什么病毒）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-8-free-high-speed-nodes.htm" title="11月8日→22.5M/S|2024年最新免费节点Free Mellow订阅链接地址">11月8日→22.5M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-26-free-node-subscribe-links.htm" title="1月26日→21.2M/S|2025年最新免费节点Free Mellow订阅链接地址">1月26日→21.2M/S|2025年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-50054.htm" title="spring boot actuator监控详细介绍一(超级详细)">spring boot actuator监控详细介绍一(超级详细)</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">21</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End Wellcome Section-->
+                <!--main-footer-area-->
+        <footer class="main-footer-area" style="background: url(images/background/3.jpg);">
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="copyright-text text-center">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                        <p>
+                            <a href="/">Free Mellow免费机场订阅节点官网</a> 版权所有
+                            <br />
+                            Powered by WordPress
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--End main-footer-area-->
+        <!--Scroll to top-->
+        <div class="scroll-to-top scroll-to-target" data-target=".header-top"><span class="icon fa fa-angle-up"></span></div>
+        <script src="/assets/website/js/frontend/freemellow/jquery.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/jquery.fancybox.pack.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/jquery.fancybox-media.js"></script>
+        <!--<script src="/assets/website/js/frontend/freemellow/html5lightbox.js"></script>-->
+        <!-- revolution slider js -->
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/jquery.themepunch.tools.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/jquery.themepunch.revolution.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.video.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/owl.carousel.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/wow.js"></script>
+        <!-- bxslider -->
+        <script src="/assets/website/js/frontend/freemellow/bxslider.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/jquery.countTo.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/script.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!--End pagewrapper-->
+</body>
+
+</html>
