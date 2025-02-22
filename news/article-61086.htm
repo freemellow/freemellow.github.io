@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freemellow.github.io/news/article-61086.htm" />
+    <meta charset="utf-8">
+    <title>numpy和tensor类型更改（增加或减少）参数维度（reshape）</title>
+        <meta name="description" content="首先需注意的是numpy和tensor的维度排列顺序不一样，这里拿一张图片的shape举例： to_tensor = torchvision.transforms.ToTensor() img = c" />
+        <link rel="icon" href="/assets/website/img/freemellow/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Free Mellow免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://freemellow.github.io/news/article-61086.htm" />
+    <meta property="og:site_name" content="Free Mellow免费机场订阅节点官网" />
+    <meta property="og:title" content="numpy和tensor类型更改（增加或减少）参数维度（reshape）" />
+    <meta property="og:image" content="https://freemellow.github.io/uploads/20240925-1/46c6bc107afa05ff2030e62171dba121.webp" />
+        <meta property="og:release_date" content="2025-02-22T07:12:11" />
+    <meta property="og:updated_time" content="2025-02-22T07:12:11" />
+        <meta property="og:description" content="首先需注意的是numpy和tensor的维度排列顺序不一样，这里拿一张图片的shape举例： to_tensor = torchvision.transforms.ToTensor() img = c" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="numpy和tensor类型更改（增加或减少）参数维度（reshape）">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com">
+    
+    <!-- Stylesheets -->
+    <link href="/assets/website/css/freemellow/bootstrap.css" rel="stylesheet">
+    <link href="/assets/website/css/freemellow/responsive.css" rel="stylesheet">
+    <link href="/assets/website/css/freemellow/style.css" rel="stylesheet">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- mobile responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1J70V33BC1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1J70V33BC1');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="page-wrapper">
+                <!-- Preloader -->
+        <div class="preloader"></div>
+        <!-- Preloader -->
+        <!--Main Header-->
+        <header class="main-header-block sticky-header">
+            <div class="container">
+                <div class="logo">
+                    <figure> 
+                        <a href="/">
+                                                        <span>Free Mellow</span>
+                                                    </a>
+                    </figure>
+                </div>
+                <div class="header-area clearfix">
+                    <nav class="main-menu-navigation">
+                        <div class="navbar-header">
+                            <!-- Toggle Button -->
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                        </div>
+                        <div class="navbar-collapse collapse clearfix">
+                            <ul class="navigation clearfix">
+                                                                <li><a href="/">首页</a></li>
+                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <!--End Main Header -->
+        <!--Page Title-->
+        <section class="page-title">
+            <div class="container clearfix text-center">
+                <div class="title">
+                    <h1>numpy和tensor类型更改（增加或减少）参数维度（reshape）</h1>
+                </div>
+                <ul class="title-manu">
+                    <li><a href="/">首页</a></li>
+                    <li>-</li>
+                    <li><a href="/news/">新闻资讯</a></li>
+                    <li>-</li>
+                    <li>正文</li>
+                </ul>
+            </div>
+        </section>
+        <!--End Page Title-->
+        <!--Wellcome Section-->
+        <section class="wellcome-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>首先需注意的是numpy和tensor的维度排列顺序不一样，这里拿一张图片的shape举例：</p> <pre><code>to_tensor = torchvision.transforms.ToTensor() img = cv2.imread("sample.jpg") img_tensor = to_tensor(img) print(type(img))  # &lt;class 'numpy.ndarray'&gt; print(img.shape)  # (450, 500, 3) print(type(img_tensor))  # &lt;class 'torch.Tensor'&gt; print(img_tensor.shape)  # torch.Size([3, 450, 500]) </code></pre> <p>如果想改变数组内元素的排列顺序，torch和numpy都自带reshape方法：</p> <pre><code># 展平操作 print(np.reshape(img, (1, 1, -1)).shape)  # (1, 1, 675000) print(torch.reshape(img_tensor, (1, 1, -1)).shape)  # torch.Size([1, 1, 675000]) # 注意-1的含义是让计算机自己计算这里的值（因为元素总数是不会变的，该例3*450*500 = 675000） # 但“-1”至多出现一次，也很好理解，假若两个位置需要计算机计算（-1），显然是无法做到的 </code></pre> <p>增加（减少）维度，以numpy为例（tensor同用法）：</p> <pre><code># 减少维度 img_1 = img[:, :, 1]  # 截取 img_2 = np.reshape(img, (450, -1))  # reshape方法必须保证总量不变 print(img_1.shape)  # (450, 500) print(img_2.shape)  # (450, 1500)  # 增加维度 a = np.array((3, 2, 3)) b = a[:, None, None] c = np.reshape(a, (3, 1, -1)) print(a.shape)  # (3,) print(b.shape)  # (3, 1, 1) print(c.shape)  # (3, 1, 1)</code></pre> <p>实例应用：</p> <p>在图像标准化处理中假设我们计算得到RGB的均值(mean)为（127， 127， 127）&nbsp;标准差std为（8， 8， 8），那么我们接下来要对整个图片各个位置的RGB进行(img - mean) / std&nbsp;计算，显然是不能直接计算的，因为原图是个三维矩阵，而我们计算得到的均值和标准差都是一维的（包含三个值），所以在计算过程中需要对mean和std进行增加维度操作。</p> <pre><code># 举例 img = np.random.randint(0, 255, (2, 2, 3)) mean = np.array((127, 127, 127)) std = np.array((8, 8, 8)) img_result = (img - mean[None, None, :]) / std[None, None, :] print("处理前：", img) # [[[177   1 231] #   [  1 109 203]] #  #  [[177 135 146] #   [ 66  89 122]]] print("处理后", img_result) # [[[  6.25  -15.75   13.   ] #   [-15.75   -2.25    9.5  ]] #  #  [[  6.25    1.      2.375] #   [ -7.625  -4.75   -0.625]]] </code></pre> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-60514.htm">动物诊疗许可证需要多少钱一个（动物诊疗许可证要钱吗）</a></p>
+                                        <p>下一个：<a href="/news/article-61087.htm">python入门基础字典及相关操作详解</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-11-13-free-node-subscribe.htm" title="11月13日→20.8M/S|2024年最新免费节点Free Mellow订阅链接地址">11月13日→20.8M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-13-free-subscribe-node.htm" title="2月13日→18M/S|2025年最新免费节点Free Mellow订阅链接地址">2月13日→18M/S|2025年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-9-node-share.htm" title="1月9日→22.4M/S|2025年最新免费节点Free Mellow订阅链接地址">1月9日→22.4M/S|2025年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-58833.htm" title="FreeRTOS进阶列表和列表项示例分析_操作系统">FreeRTOS进阶列表和列表项示例分析_操作系统</a></li>
+                        <li class="py-2"><a href="/news/article-20257.htm" title="做梦梦到抱别的女人走路什么意思（做梦梦到抱别的女人走路什么意思呀）">做梦梦到抱别的女人走路什么意思（做梦梦到抱别的女人走路什么意思呀）</a></li>
+                        <li class="py-2"><a href="/news/article-50054.htm" title="spring boot actuator监控详细介绍一(超级详细)">spring boot actuator监控详细介绍一(超级详细)</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-28-node-share-links.htm" title="1月28日→22.3M/S|2025年最新免费节点Free Mellow订阅链接地址">1月28日→22.3M/S|2025年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-55943.htm" title="动物医院的英文怎么读（动物医院的英文怎么读啊）">动物医院的英文怎么读（动物医院的英文怎么读啊）</a></li>
+                        <li class="py-2"><a href="/news/article-29037.htm" title="中国农大动物医院怎么挂号（中国农业大学动物医院预约挂号验证码）">中国农大动物医院怎么挂号（中国农业大学动物医院预约挂号验证码）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-23-node-share.htm" title="1月23日→21.7M/S|2025年最新免费节点Free Mellow订阅链接地址">1月23日→21.7M/S|2025年最新免费节点Free Mellow订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">66</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End Wellcome Section-->
+                <!--main-footer-area-->
+        <footer class="main-footer-area" style="background: url(images/background/3.jpg);">
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="copyright-text text-center">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                        <p>
+                            <a href="/">Free Mellow免费机场订阅节点官网</a> 版权所有
+                            <br />
+                            Powered by WordPress
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--End main-footer-area-->
+        <!--Scroll to top-->
+        <div class="scroll-to-top scroll-to-target" data-target=".header-top"><span class="icon fa fa-angle-up"></span></div>
+        <script src="/assets/website/js/frontend/freemellow/jquery.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/jquery.fancybox.pack.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/jquery.fancybox-media.js"></script>
+        <!--<script src="/assets/website/js/frontend/freemellow/html5lightbox.js"></script>-->
+        <!-- revolution slider js -->
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/jquery.themepunch.tools.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/jquery.themepunch.revolution.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.video.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/owl.carousel.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/wow.js"></script>
+        <!-- bxslider -->
+        <script src="/assets/website/js/frontend/freemellow/bxslider.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/jquery.countTo.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/script.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!--End pagewrapper-->
+</body>
+
+</html>

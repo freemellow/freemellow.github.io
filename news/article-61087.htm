@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freemellow.github.io/news/article-61087.htm" />
+    <meta charset="utf-8">
+    <title>python入门基础字典及相关操作详解</title>
+        <meta name="description" content="一、什么是字典 字典是Python中最强大的数据类型之一，也是Python语言中唯一的映射类型。映射类型对象里哈希值(键,key)和指向的对象(值,value)是一对多的的关系,通常被认为是可变的哈希" />
+        <link rel="icon" href="/assets/website/img/freemellow/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Free Mellow免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://freemellow.github.io/news/article-61087.htm" />
+    <meta property="og:site_name" content="Free Mellow免费机场订阅节点官网" />
+    <meta property="og:title" content="python入门基础字典及相关操作详解" />
+    <meta property="og:image" content="https://freemellow.github.io/uploads/20240925-1/46c6bc107afa05ff2030e62171dba121.webp" />
+        <meta property="og:release_date" content="2025-02-22T07:12:11" />
+    <meta property="og:updated_time" content="2025-02-22T07:12:11" />
+        <meta property="og:description" content="一、什么是字典 字典是Python中最强大的数据类型之一，也是Python语言中唯一的映射类型。映射类型对象里哈希值(键,key)和指向的对象(值,value)是一对多的的关系,通常被认为是可变的哈希" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="python入门基础字典及相关操作详解">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com">
+    
+    <!-- Stylesheets -->
+    <link href="/assets/website/css/freemellow/bootstrap.css" rel="stylesheet">
+    <link href="/assets/website/css/freemellow/responsive.css" rel="stylesheet">
+    <link href="/assets/website/css/freemellow/style.css" rel="stylesheet">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- mobile responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1J70V33BC1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1J70V33BC1');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="page-wrapper">
+                <!-- Preloader -->
+        <div class="preloader"></div>
+        <!-- Preloader -->
+        <!--Main Header-->
+        <header class="main-header-block sticky-header">
+            <div class="container">
+                <div class="logo">
+                    <figure> 
+                        <a href="/">
+                                                        <span>Free Mellow</span>
+                                                    </a>
+                    </figure>
+                </div>
+                <div class="header-area clearfix">
+                    <nav class="main-menu-navigation">
+                        <div class="navbar-header">
+                            <!-- Toggle Button -->
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                        </div>
+                        <div class="navbar-collapse collapse clearfix">
+                            <ul class="navigation clearfix">
+                                                                <li><a href="/">首页</a></li>
+                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <!--End Main Header -->
+        <!--Page Title-->
+        <section class="page-title">
+            <div class="container clearfix text-center">
+                <div class="title">
+                    <h1>python入门基础字典及相关操作详解</h1>
+                </div>
+                <ul class="title-manu">
+                    <li><a href="/">首页</a></li>
+                    <li>-</li>
+                    <li><a href="/news/">新闻资讯</a></li>
+                    <li>-</li>
+                    <li>正文</li>
+                </ul>
+            </div>
+        </section>
+        <!--End Page Title-->
+        <!--Wellcome Section-->
+        <section class="wellcome-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<p>一、什么是字典</p> <p>字典是Python中最强大的数据类型之一，也是Python语言中唯一的映射类型。映射类型对象里哈希值(键,key)和指向的对象(值,value)是一对多的的关系,通常被认为是可变的哈希表,字典对象是可变的,它是一个容器类型,能存储任意个数的Python对象,其中也可包括其他容器类型。</p> <p>字典类型与序列类型的区别：<br />1.存取和访问数据的方式不同。<br />2.序列类型只用数字类型的键(从序列的开始按数值顺序索引)；<br />3.映射类型可以用其他对象类型作键(如：数字、字符串、元组,一般用字符串作键),和序列类型的键不同,映射类型的键直<br />4.接或间接地和存储数据值相关联。<br />5.映射类型中的数据是无序排列的,这和序列类型是不一样的,序列类型是以数值序排列的。<br />6.映射类型用键直接“映射”到值。</p> <p>总之,Python中<span style="color: rgba(255, 0, 0, 1)">字典是一系列"键-值"对</span>,<span style="color: rgba(255, 0, 0, 1)">每个键都与一个值关联</span>,可以使用键来访问与之相关联的值。与键相关联的值可以是数字、字符串、列表乃至字典。事实上,可将任何Python对象用作字典中的值。</p> <p>一个简单字典的示例：</p> <div class="cnblogs_code"> <pre>student_A ={<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">name</span><span style="color: rgba(128, 0, 0, 1)">'</span>:<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">Allen</span><span style="color: rgba(128, 0, 0, 1)">'</span>,<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">age</span><span style="color: rgba(128, 0, 0, 1)">'</span>:<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">14</span><span style="color: rgba(128, 0, 0, 1)">'</span>,<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">grade</span><span style="color: rgba(128, 0, 0, 1)">'</span>:<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">8</span><span style="color: rgba(128, 0, 0, 1)">'</span>}<span style="color: rgba(0, 128, 0, 1)">#</span><span style="color: rgba(0, 128, 0, 1)"> 定义一个字典</span><span style="color: rgba(0, 0, 255, 1)">print</span>(student_A[<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">name</span><span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(0, 0, 0, 1)">])</span><span style="color: rgba(0, 0, 255, 1)">print</span>(student_A[<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">age</span><span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(0, 0, 0, 1)">])</span><span style="color: rgba(0, 0, 255, 1)">print</span>(student_A[<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">grade</span><span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(0, 0, 0, 1)">])  new_names</span>= student_A[<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">name</span><span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(0, 0, 0, 1)">] new_ages</span>= student_A [<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">age</span><span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(0, 0, 0, 1)">] new_grades</span>= student_A [<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">grade</span><span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(0, 0, 0, 1)">]</span><span style="color: rgba(0, 0, 255, 1)">print</span>(<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">The student_A's name is</span><span style="color: rgba(128, 0, 0, 1)">"</span> + new_names.title()+<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">,and she is</span><span style="color: rgba(128, 0, 0, 1)">"</span>+str(new_ages) +<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)"> years old,and Grade</span><span style="color: rgba(128, 0, 0, 1)">"</span>+str(new_grades))</pre> </div> <pre>其中，student_A={'name':'Allen','age':'14','grade':'8'}  定义了一个名为student_A的字典，该字典中有三个关键字'name','age'和'grade',对应的值分别为'Allen','14'和'8'</pre> <pre>student_A['name'] 表示引用的是student_A['name']的值，即Allen，也就是语句：new_names = student_A['name'] 和new_names='Allen'是一样的。<br/><br/>一、创建一个字典<br/>1）如上述代码，直接定义一个字典，student_A ={'name':'Allen','age':'14','grade':'8'}，列出各关键字和对应的值；<br/>2）先使用一对花括号定义一个字典，再分行添加各个分键值对:</pre> <div class="cnblogs_code"> <pre>student_B=<span style="color: rgba(0, 0, 0, 1)">{} student_B[</span><span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">name</span><span style="color: rgba(128, 0, 0, 1)">'</span>]=<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">Jack</span><span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(0, 0, 0, 1)"> student_B[</span><span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">age</span><span style="color: rgba(128, 0, 0, 1)">'</span>]=13<span style="color: rgba(0, 0, 0, 1)"> student_B[</span><span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">grade</span><span style="color: rgba(128, 0, 0, 1)">'</span>]=7</pre> </div> <p>二、在原有字典上添加“键-值”对：由于字典是可变的，能存储任意个数对象，因此可随意添加</p> <div class="cnblogs_code"> <pre>student_A[<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">address</span><span style="color: rgba(128, 0, 0, 1)">'</span>] =<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">Hubei</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(0, 128, 0, 1)">#</span><span style="color: rgba(0, 128, 0, 1)">增加了一个地址健值对，由原来的3个变成4个</span> student_A[<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">PhoneNumber</span><span style="color: rgba(128, 0, 0, 1)">'</span>] =<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">18012345678</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(0, 128, 0, 1)">#</span><span style="color: rgba(0, 128, 0, 1)">增加了一个电话健值对，字典student_A里由4个变成5个</span><span style="color: rgba(0, 0, 255, 1)">print</span>(student_A)<span style="color: rgba(0, 128, 0, 1)">#</span><span style="color: rgba(0, 128, 0, 1)">键 — 值对的排列顺序与添加顺序不同。Python不关心键-值对的添加顺序，而只关心键和值之间的关联关系</span></pre> </div> <p>即在student_A字典原有3个关键字的基础上，增加了两个关键字address和PhoneNumber。</p> <p>上述代码运行结果：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/4f8c1b0f2bda62d191e2ed858acb3c3c.jpg" alt="python入门基础字典及相关操作详解"></p> <p>三、修改字典中的值：要修改字典中的值，可依次指定字典名、用方括号括起的键以及与该键相关联的新值。</p> <div class="cnblogs_code"> <pre>student_B[<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">age</span><span style="color: rgba(128, 0, 0, 1)">'</span>]=14<span style="color: rgba(0, 128, 0, 1)">#</span><span style="color: rgba(0, 128, 0, 1)">修改student_B的age值为14</span><span style="color: rgba(0, 0, 255, 1)">print</span><span style="color: rgba(0, 0, 0, 1)">(student_B)</span><span style="color: rgba(0, 0, 255, 1)">print</span>(<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">\n</span><span style="color: rgba(128, 0, 0, 1)">"</span>)</pre> </div> <p>四、删除键-值对：对于字典中不再需要的信息，可使用 del 语句将相应的键-值对彻底删除。使用 del 语句时，必须指定字典名和要删除的键。</p> <div class="cnblogs_code"> <pre><span style="color: rgba(0, 0, 255, 1)">del</span> student_A[<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">address</span><span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(0, 0, 0, 1)">]</span><span style="color: rgba(0, 0, 255, 1)">print</span>(student_A)</pre> </div> <p>五、由类似对象组成的字典：字典存储的是一个对象（学生A或B）的多种信息，但也可以使用字典来存储众多对象的同一种信息</p> <div class="cnblogs_code"> <pre>favor_languages = {<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">jack</span><span style="color: rgba(128, 0, 0, 1)">'</span>:<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">python</span><span style="color: rgba(128, 0, 0, 1)">'</span>,<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">sarah</span><span style="color: rgba(128, 0, 0, 1)">'</span>:<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">c</span><span style="color: rgba(128, 0, 0, 1)">'</span>,<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">lucy</span><span style="color: rgba(128, 0, 0, 1)">'</span>:<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">ruby</span><span style="color: rgba(128, 0, 0, 1)">'</span>,<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">phil</span><span style="color: rgba(128, 0, 0, 1)">'</span>:<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">python</span><span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(0, 0, 0, 1)">}</span><span style="color: rgba(0, 0, 255, 1)">print</span>(favor_languages[<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">lucy</span><span style="color: rgba(128, 0, 0, 1)">'</span>])</pre> </div> <p>六、遍历字典<br />一个Python字典可能只包含几个键-值对，也可能包含数百万个键-值对。鉴于字典可能包含大量的数据，Python支持对字典遍历。字典可用于以各种方式存储信息，因此有多种遍历字典的方式：可遍历字典的所有键-值对、键或值。</p> <div class="cnblogs_code"> <pre><span style="color: rgba(0, 0, 255, 1)">for</span> key,value<span style="color: rgba(0, 0, 255, 1)">in</span> student_A.items():<span style="color: rgba(0, 128, 0, 1)">#</span><span style="color: rgba(0, 128, 0, 1)"> 注意，student_A后增加了.items() 用于读取字典中的每一项</span><span style="color: rgba(0, 0, 255, 1)">print</span>(<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">\nKey:</span><span style="color: rgba(128, 0, 0, 1)">"</span> + key)<span style="color: rgba(0, 128, 0, 1)">#</span><span style="color: rgba(0, 128, 0, 1)">打印出关键字</span><span style="color: rgba(0, 0, 255, 1)">print</span>(<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">Value:</span><span style="color: rgba(128, 0, 0, 1)">"</span> + value)<span style="color: rgba(0, 128, 0, 1)">#</span><span style="color: rgba(0, 128, 0, 1)">打印出关键字的值</span><span style="color: rgba(0, 0, 255, 1)">for</span> name, language<span style="color: rgba(0, 0, 255, 1)">in</span><span style="color: rgba(0, 0, 0, 1)"> favor_languages.items():<span style="color: rgba(0, 128, 0, 1)">#遍历所有的键值对：用于遍历字典的for循环，可声明两个变量，用于存储键-值对中的键和值</span></span><span style="color: rgba(0, 0, 255, 1)">print</span>(name.title() +<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">'s favorite language is</span><span style="color: rgba(128, 0, 0, 1)">"</span> +language.title() +<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">.</span><span style="color: rgba(128, 0, 0, 1)">"</span>)<span style="color: rgba(0, 128, 0, 1)">#</span><span style="color: rgba(0, 128, 0, 1)">遍历字典中的每个键-值对，并将键存储在变量name中，而将值存储在变</span><span style="color: rgba(0, 128, 0, 1)">量language 中</span><br/><span style="color: rgba(0, 0, 255, 1)">for</span> name<span style="color: rgba(0, 0, 255, 1)">in</span><span style="color: rgba(0, 0, 0, 1)"> favor_languages.keys():<span style="color: rgba(0, 128, 0, 1)">#遍历字典中的所有键，在不需要使用字典中的值时，方法 keys() ，注意后面增加的keys()</span></span><span style="color: rgba(0, 0, 255, 1)">print</span><span style="color: rgba(0, 0, 0, 1)">(name.title())</span><span style="color: rgba(0, 0, 255, 1)">print</span>(<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">\n</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(0, 0, 0, 1)">)  my_friends</span>= [<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">jack</span><span style="color: rgba(128, 0, 0, 1)">'</span>,<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">sarah</span><span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(0, 0, 0, 1)">]</span><span style="color: rgba(0, 0, 255, 1)">for</span> name<span style="color: rgba(0, 0, 255, 1)">in</span><span style="color: rgba(0, 0, 0, 1)"> favor_languages.keys():</span><span style="color: rgba(0, 0, 255, 1)">print</span><span style="color: rgba(0, 0, 0, 1)">(name.title())</span><span style="color: rgba(0, 0, 255, 1)">if</span> name<span style="color: rgba(0, 0, 255, 1)">in</span><span style="color: rgba(0, 0, 0, 1)"> my_friends:</span><span style="color: rgba(0, 0, 255, 1)">print</span>(<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)"> Hi</span><span style="color: rgba(128, 0, 0, 1)">"</span> + name.title() +<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">, I see your favorite language is</span><span style="color: rgba(128, 0, 0, 1)">"</span> +favor_languages[name].title() +<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">!</span><span style="color: rgba(128, 0, 0, 1)">"</span>)</pre> </div> <p>具体运行结果：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/43ca59ac06db54fd4ab7fc2b2698a520.jpg" alt="python入门基础字典及相关操作详解"></p> <p>&nbsp;按顺序遍历字典中的所有键:<span style="color: rgba(255, 0, 0, 1)">字典记录键和值之间的关联关系，但获取字典的元素的顺序是不可预测的，要以特定的顺序返回元素，可对返回的键进行排序可使用函数 sorted() 来进行排序。</span></p> <div class="cnblogs_code"> <pre>favor_languages= {<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">jack</span><span style="color: rgba(128, 0, 0, 1)">'</span>:<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">python</span><span style="color: rgba(128, 0, 0, 1)">'</span>,<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">polo</span><span style="color: rgba(128, 0, 0, 1)">'</span>:<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">java</span><span style="color: rgba(128, 0, 0, 1)">'</span>,<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">lucy</span><span style="color: rgba(128, 0, 0, 1)">'</span>:<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">ruby</span><span style="color: rgba(128, 0, 0, 1)">'</span>,<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">Albet</span><span style="color: rgba(128, 0, 0, 1)">'</span>:<span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">java</span><span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(0, 0, 0, 1)">}</span><span style="color: rgba(0, 128, 0, 1)">#</span><span style="color: rgba(0, 128, 0, 1)">使用函数 sorted() 来获得按特定顺序排列的键列表</span><span style="color: rgba(0, 0, 255, 1)">for</span> name<span style="color: rgba(0, 0, 255, 1)">in</span> sorted(favor_languages.keys()):<span style="color: rgba(0, 128, 0, 1)">#</span><span style="color: rgba(0, 128, 0, 1)">对关键字进行排序</span><span style="color: rgba(0, 0, 255, 1)">print</span>(name.title() +<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">, thank you !</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(0, 0, 0, 1)">)</span><span style="color: rgba(0, 0, 255, 1)">print</span>(<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">\n</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(0, 0, 0, 1)">)</span><span style="color: rgba(0, 128, 0, 1)">#</span><span style="color: rgba(0, 128, 0, 1)">遍历字典中的所有值:如果主要获取的是字典包含的值，可使用方法 values()</span><span style="color: rgba(0, 0, 255, 1)">for</span> language<span style="color: rgba(0, 0, 255, 1)">in</span><span style="color: rgba(0, 0, 0, 1)"> favor_languages.values():</span><span style="color: rgba(0, 0, 255, 1)">print</span><span style="color: rgba(0, 0, 0, 1)">(language.title())</span><span style="color: rgba(0, 0, 255, 1)">print</span>(<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">\n</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(0, 0, 0, 1)">)</span><span style="color: rgba(0, 128, 0, 1)">#</span><span style="color: rgba(0, 128, 0, 1)">使用集合（set）消除重复项</span><span style="color: rgba(0, 0, 255, 1)">for</span> language<span style="color: rgba(0, 0, 255, 1)">in</span><span style="color: rgba(0, 0, 0, 1)"> set(favor_languages.values()):</span><span style="color: rgba(0, 0, 255, 1)">print</span>(language.title())</pre> </div> <p>运行结果如下：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/8669590aeea6226c4702901b2e71bb4c.jpg" alt="python入门基础字典及相关操作详解"></p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-61086.htm">numpy和tensor类型更改（增加或减少）参数维度（reshape）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-12-28-node-share.htm" title="12月28日→18.5M/S|2024年最新免费节点Free Mellow订阅链接地址">12月28日→18.5M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-24-free-node-subscribe-links.htm" title="1月24日→21.4M/S|2025年最新免费节点Free Mellow订阅链接地址">1月24日→21.4M/S|2025年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-9-free-node-subscribe.htm" title="2月9日→20.1M/S|2025年最新免费节点Free Mellow订阅链接地址">2月9日→20.1M/S|2025年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-2-free-node-subscribe.htm" title="12月2日→21.3M/S|2024年最新免费节点Free Mellow订阅链接地址">12月2日→21.3M/S|2024年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-44564.htm" title="合肥免费宠物救援中心（合肥宠物救援中心电话）">合肥免费宠物救援中心（合肥宠物救援中心电话）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-23-node-share.htm" title="1月23日→21.7M/S|2025年最新免费节点Free Mellow订阅链接地址">1月23日→21.7M/S|2025年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-7-node-share.htm" title="1月7日→18.8M/S|2025年最新免费节点Free Mellow订阅链接地址">1月7日→18.8M/S|2025年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-48023.htm" title="开宠物粮工厂需要办什么手续和证件呢（宠物粮加工厂加盟）">开宠物粮工厂需要办什么手续和证件呢（宠物粮加工厂加盟）</a></li>
+                        <li class="py-2"><a href="/news/article-37626.htm" title="宠物领养系统数据库设计（实现宠物领养功能）">宠物领养系统数据库设计（实现宠物领养功能）</a></li>
+                        <li class="py-2"><a href="/news/article-46557.htm" title="八公宠物领养网站官网（八公宠物领养网站官网入口）">八公宠物领养网站官网（八公宠物领养网站官网入口）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">66</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End Wellcome Section-->
+                <!--main-footer-area-->
+        <footer class="main-footer-area" style="background: url(images/background/3.jpg);">
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="copyright-text text-center">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                        <p>
+                            <a href="/">Free Mellow免费机场订阅节点官网</a> 版权所有
+                            <br />
+                            Powered by WordPress
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--End main-footer-area-->
+        <!--Scroll to top-->
+        <div class="scroll-to-top scroll-to-target" data-target=".header-top"><span class="icon fa fa-angle-up"></span></div>
+        <script src="/assets/website/js/frontend/freemellow/jquery.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/jquery.fancybox.pack.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/jquery.fancybox-media.js"></script>
+        <!--<script src="/assets/website/js/frontend/freemellow/html5lightbox.js"></script>-->
+        <!-- revolution slider js -->
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/jquery.themepunch.tools.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/jquery.themepunch.revolution.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.video.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/owl.carousel.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/wow.js"></script>
+        <!-- bxslider -->
+        <script src="/assets/website/js/frontend/freemellow/bxslider.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/jquery.countTo.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/script.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!--End pagewrapper-->
+</body>
+
+</html>
