@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freemellow.github.io/news/article-72381.htm" />
+    <meta charset="utf-8">
+    <title>pyenv与pyenv-virtualenv的安装和使用（Mac）</title>
+        <meta name="description" content="使用Pyenv方便管理/切换Python版本  1、安装 # 通过 Homebrew 安装 brew update brew install pyenv 2、配置  编辑配置文件  # 使用 zsh " />
+        <link rel="icon" href="/assets/website/img/freemellow/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Free Mellow免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://freemellow.github.io/news/article-72381.htm" />
+    <meta property="og:site_name" content="Free Mellow免费机场订阅节点官网" />
+    <meta property="og:title" content="pyenv与pyenv-virtualenv的安装和使用（Mac）" />
+    <meta property="og:image" content="https://freemellow.github.io/uploads/20240925-1/46c6bc107afa05ff2030e62171dba121.webp" />
+        <meta property="og:release_date" content="2025-03-12T06:08:59" />
+    <meta property="og:updated_time" content="2025-03-12T06:08:59" />
+        <meta property="og:description" content="使用Pyenv方便管理/切换Python版本  1、安装 # 通过 Homebrew 安装 brew update brew install pyenv 2、配置  编辑配置文件  # 使用 zsh " />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="pyenv与pyenv-virtualenv的安装和使用（Mac）">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com">
+    
+    <!-- Stylesheets -->
+    <link href="/assets/website/css/freemellow/bootstrap.css" rel="stylesheet">
+    <link href="/assets/website/css/freemellow/responsive.css" rel="stylesheet">
+    <link href="/assets/website/css/freemellow/style.css" rel="stylesheet">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- mobile responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1J70V33BC1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1J70V33BC1');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="page-wrapper">
+                <!-- Preloader -->
+        <div class="preloader"></div>
+        <!-- Preloader -->
+        <!--Main Header-->
+        <header class="main-header-block sticky-header">
+            <div class="container">
+                <div class="logo">
+                    <figure> 
+                        <a href="/">
+                                                        <span>Free Mellow</span>
+                                                    </a>
+                    </figure>
+                </div>
+                <div class="header-area clearfix">
+                    <nav class="main-menu-navigation">
+                        <div class="navbar-header">
+                            <!-- Toggle Button -->
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                        </div>
+                        <div class="navbar-collapse collapse clearfix">
+                            <ul class="navigation clearfix">
+                                                                <li><a href="/">首页</a></li>
+                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <!--End Main Header -->
+        <!--Page Title-->
+        <section class="page-title">
+            <div class="container clearfix text-center">
+                <div class="title">
+                    <h1>pyenv与pyenv-virtualenv的安装和使用（Mac）</h1>
+                </div>
+                <ul class="title-manu">
+                    <li><a href="/">首页</a></li>
+                    <li>-</li>
+                    <li><a href="/news/">新闻资讯</a></li>
+                    <li>-</li>
+                    <li>正文</li>
+                </ul>
+            </div>
+        </section>
+        <!--End Page Title-->
+        <!--Wellcome Section-->
+        <section class="wellcome-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <blockquote> <p>使用Pyenv方便管理/切换Python版本</p> </blockquote> <h3>1、安装</h3> <pre># 通过 Homebrew 安装 brew update brew install pyenv</pre> <h3>2、配置</h3> <ol> <li>编辑配置文件</li> </ol> <pre># 使用 zsh shell vim ~/.zshrc  # 使用系统默认 vim ~/.bash_profile</pre> <p>在<strong>.zshrc</strong>&nbsp;或<strong>.bash_profile</strong>&nbsp;文件最后写入：</p> <pre>export PYENV_ROOT="$HOME/.pyenv" export PATH="$PYENV_ROOT/bin:$PATH"  if which pyenv &gt; /dev/null;   then eval "$(pyenv init -)"; fi</pre> <ol> <li>使配置生效</li> </ol> <pre>source ~/.zshrc # or source ~/.bash_profile</pre> <h3>3、使用</h3> <ul> <li>查看可安装的版本</li> </ul> <pre>pyenv install --list</pre> <ul> <li>安装python版本</li> </ul> <pre>pyenv install 3.6.3</pre> <ul> <li>查看当前已安装的python版本</li> </ul> <pre>pyenv versions</pre> <p><a href="http://img.555519.xyz/uploads3/20220904/d6b1d96b943b826ddaf1befba2988db8.jpg" rel="nofollow" class="fancybox" data-fancybox-group="button"><img decoding="async" alt="2017-11-01-14-52-01" class="has" src="http://img.555519.xyz/uploads3/20220904/d6b1d96b943b826ddaf1befba2988db8.jpg"></a></p> <p><em>已安装3.6.2 与 3.6.3 版本, 当前使用的版本: 3.6.3</em></p> <ul> <li>设置python版本</li> </ul> <pre># 对所有的Shell全局有效，会把版本号写入到~/.pyenv/version文件中 pyenv global 3.6.3  # 只对当前目录有效，会在当前目录创建.python-version文件 pyenv local 3.6.3  # 只在当前会话有效 pyenv shell 3.6.3  # 可通过配置PYENV_VERSION环境变量或编辑~/.python-version文件设置会话默认使用的python版本 echo "3.6.3" &gt; ~/.python-version # or echo 'export PYENV_VERSION="3.6.3"' &gt;&gt; ~/.zshrc &amp;&amp; source ~/.zshrc</pre> <ul> <li>重置版本设置</li> </ul> <blockquote> <p>只有 pyenv shell 和 pyenv local 命令有--unset参数</p> </blockquote> <pre>pyenv shell --unset pyenv local --unset</pre> <ul> <li>卸载版本</li> </ul> <pre>pyenv uninstall 3.6.3</pre> <h2><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/pyenv/pyenv-virtualenv"  rel="nofollow">pyenv-virtualenv</a></h2> <blockquote> <p>pyenv-virtualenv 是pyenv的插件，为pyenv设置的python版本提供隔离的虚拟环境，设置虚拟环境后，在当前目录下面安装的第三方库都不会影响其他环境</p> </blockquote> <h3>1、安装</h3> <pre>brew update brew install pyenv-virtualenv</pre> <h3>2、配置</h3> <ol> <li>编辑配置文件</li> </ol> <pre># 使用 zsh shell vim ~/.zshrc  # 使用系统默认 vim ~/.bash_profile</pre> <p>在<strong>.zshrc</strong>&nbsp;或<strong>.bash_profile</strong>&nbsp;文件最后写入：</p> <pre># pyenv-virtualenv if which pyenv-virtualenv-init &gt; /dev/null;   then eval "$(pyenv virtualenv-init -)"; fi</pre> <ol> <li>使配置生效</li> </ol> <pre>source ~/.zshrc # or source ~/.bash_profile</pre> <h3>3、使用</h3> <ul> <li>从当前版本创建virtualenv</li> </ul> <pre># 当前版本为3.6.3 pyenv virtualenv xxx-3.6.3</pre> <ul> <li>指定版本创建virtualenv</li> </ul> <pre>#pyenv virtualenv 版本号 虚拟环境名 pyenv virtualenv 3.6.3 xxx-3.6.3</pre> <ul> <li>查看已创建的virtualenv</li> </ul> <pre>pyenv versions</pre> <p><a href="http://img.555519.xyz/uploads3/20220904/c5ef1325c441bd8c8f1fe4e7ba22c844.jpg" rel="nofollow" class="fancybox" data-fancybox-group="button"><img decoding="async" alt="2017-11-01-17-20-55" class="has" src="http://img.555519.xyz/uploads3/20220904/c5ef1325c441bd8c8f1fe4e7ba22c844.jpg"></a></p> <ul> <li>激活和停用virtualenv</li> </ul> <pre># 手动激活 pyenv activate 虚拟环境名 pyenv deactivate  # 自动激活 # 使用pyenv local 虚拟环境名 # 会把`虚拟环境名`写入当前目录的.python-version文件中 # 关闭自动激活 -&gt; pyenv deactivate # 启动自动激活 -&gt; pyenv activate xxx-3.6.3 pyenv local xxx-3.6.3</pre> <ul> <li>删除现有virtualenv</li> </ul> <pre>pyenv uninstall 虚拟环境名</pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-71730.htm">猫三针疫苗价格（三针猫咪疫苗多少钱）</a></p>
+                                        <p>下一个：<a href="/news/article-72382.htm">脚本如何加入html文件中,html中加载JavaScript脚本文件的常用方式总结</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-45578.htm" title="猫突然用头蹭人还咕噜咕噜（猫突然用头蹭人还咕噜咕噜可以摸吗）">猫突然用头蹭人还咕噜咕噜（猫突然用头蹭人还咕噜咕噜可以摸吗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-6-node-share-links.htm" title="1月6日→20.5M/S|2025年最新免费节点Free Mellow订阅链接地址">1月6日→20.5M/S|2025年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-55409.htm" title="动物疫苗多少钱一支啊图片大全集高清（动物疫苗多少钱一支啊图片大全集高清图）">动物疫苗多少钱一支啊图片大全集高清（动物疫苗多少钱一支啊图片大全集高清图）</a></li>
+                        <li class="py-2"><a href="/news/article-65300.htm" title="宠颐生宠物医院地址电话（宠颐生动物医院在线咨询）">宠颐生宠物医院地址电话（宠颐生动物医院在线咨询）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-8-free-high-speed-nodes.htm" title="1月8日→21.3M/S|2025年最新免费节点Free Mellow订阅链接地址">1月8日→21.3M/S|2025年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-73709.htm" title="动物打疫苗前后要注意什么事项（动物打疫苗前后要注意什么事项呢）">动物打疫苗前后要注意什么事项（动物打疫苗前后要注意什么事项呢）</a></li>
+                        <li class="py-2"><a href="/news/article-63458.htm" title="使用 shell 脚本自动获取发版指标数据">使用 shell 脚本自动获取发版指标数据</a></li>
+                        <li class="py-2"><a href="/news/article-36662.htm" title="动物医院的电话是什么号啊（动物医院的电话号码）">动物医院的电话是什么号啊（动物医院的电话号码）</a></li>
+                        <li class="py-2"><a href="/news/article-53758.htm" title="【厦门领养猫咪】 厦门 领养猫">【厦门领养猫咪】 厦门 领养猫</a></li>
+                        <li class="py-2"><a href="/news/article-68489.htm" title="宠物粮食加工设备有哪些厂家生产（小型宠物粮加工厂需要什么手续）">宠物粮食加工设备有哪些厂家生产（小型宠物粮加工厂需要什么手续）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">42</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End Wellcome Section-->
+                <!--main-footer-area-->
+        <footer class="main-footer-area" style="background: url(images/background/3.jpg);">
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="copyright-text text-center">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                        <p>
+                            <a href="/">Free Mellow免费机场订阅节点官网</a> 版权所有
+                            <br />
+                            Powered by WordPress
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--End main-footer-area-->
+        <!--Scroll to top-->
+        <div class="scroll-to-top scroll-to-target" data-target=".header-top"><span class="icon fa fa-angle-up"></span></div>
+        <script src="/assets/website/js/frontend/freemellow/jquery.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/jquery.fancybox.pack.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/jquery.fancybox-media.js"></script>
+        <!--<script src="/assets/website/js/frontend/freemellow/html5lightbox.js"></script>-->
+        <!-- revolution slider js -->
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/jquery.themepunch.tools.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/jquery.themepunch.revolution.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.video.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/owl.carousel.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/wow.js"></script>
+        <!-- bxslider -->
+        <script src="/assets/website/js/frontend/freemellow/bxslider.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/jquery.countTo.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/script.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!--End pagewrapper-->
+</body>
+
+</html>

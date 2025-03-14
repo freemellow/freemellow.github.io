@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freemellow.github.io/news/article-72382.htm" />
+    <meta charset="utf-8">
+    <title>脚本如何加入html文件中,html中加载JavaScript脚本文件的常用方式总结</title>
+        <meta name="description" content="当浏览器遇到(内嵌)标签时，当前浏览器无从获知javaScript是否会修改页面内容。因此，这时浏览器会停止处理页面，先执行javaScript代码，然后再继续解析和渲染页面。同样的情况也发生在使用 " />
+        <link rel="icon" href="/assets/website/img/freemellow/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Free Mellow免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://freemellow.github.io/news/article-72382.htm" />
+    <meta property="og:site_name" content="Free Mellow免费机场订阅节点官网" />
+    <meta property="og:title" content="脚本如何加入html文件中,html中加载JavaScript脚本文件的常用方式总结" />
+    <meta property="og:image" content="https://freemellow.github.io/uploads/20240925-1/1a8b5b15be7254354106f94120c88aa9.webp" />
+        <meta property="og:release_date" content="2025-03-12T06:08:59" />
+    <meta property="og:updated_time" content="2025-03-12T06:08:59" />
+        <meta property="og:description" content="当浏览器遇到(内嵌)标签时，当前浏览器无从获知javaScript是否会修改页面内容。因此，这时浏览器会停止处理页面，先执行javaScript代码，然后再继续解析和渲染页面。同样的情况也发生在使用 " />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="脚本如何加入html文件中,html中加载JavaScript脚本文件的常用方式总结">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com">
+    
+    <!-- Stylesheets -->
+    <link href="/assets/website/css/freemellow/bootstrap.css" rel="stylesheet">
+    <link href="/assets/website/css/freemellow/responsive.css" rel="stylesheet">
+    <link href="/assets/website/css/freemellow/style.css" rel="stylesheet">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- mobile responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1J70V33BC1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1J70V33BC1');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="page-wrapper">
+                <!-- Preloader -->
+        <div class="preloader"></div>
+        <!-- Preloader -->
+        <!--Main Header-->
+        <header class="main-header-block sticky-header">
+            <div class="container">
+                <div class="logo">
+                    <figure> 
+                        <a href="/">
+                                                        <span>Free Mellow</span>
+                                                    </a>
+                    </figure>
+                </div>
+                <div class="header-area clearfix">
+                    <nav class="main-menu-navigation">
+                        <div class="navbar-header">
+                            <!-- Toggle Button -->
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                        </div>
+                        <div class="navbar-collapse collapse clearfix">
+                            <ul class="navigation clearfix">
+                                                                <li><a href="/">首页</a></li>
+                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <!--End Main Header -->
+        <!--Page Title-->
+        <section class="page-title">
+            <div class="container clearfix text-center">
+                <div class="title">
+                    <h1>脚本如何加入html文件中,html中加载JavaScript脚本文件的常用方式总结</h1>
+                </div>
+                <ul class="title-manu">
+                    <li><a href="/">首页</a></li>
+                    <li>-</li>
+                    <li><a href="/news/">新闻资讯</a></li>
+                    <li>-</li>
+                    <li>正文</li>
+                </ul>
+            </div>
+        </section>
+        <!--End Page Title-->
+        <!--Wellcome Section-->
+        <section class="wellcome-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <div style="font-size:16px;"> <p>当浏览器遇到(内嵌)标签时，当前浏览器无从获知javaScript是否会修改页面内容。因此，这时浏览器会停止处理页面，先执行javaScript代码，然后再继续解析和渲染页面。同样的情况也发生在使用 src 属性加在javaScript的过程中(即外链 javaScript)，浏览器必须先花时间下载外链文件中的代码，然后解析并执行它。在这个过程中，页面渲染和用户交互完全被阻塞了。</p> <p>也就是说：每当浏览器解析到标签(无论内嵌还是外链)时，浏览器会(一根筋地)优先下载、解析并执行该标签中的javaScript代码，而阻塞了其后所有页面内容的下载和渲染。</p> <p>方式一：惯例的做法</p> <p>最传统的方式是在head标签内插入标签。</p> <p>然而这种常规的做法却隐藏着严重的性能问题。根据上述对标签特性的描述，我们知道，在该示例中，当浏览器解析到标签时，浏览器会停止解析其后的内容，而优先下载脚本文件，并执行其中的代码，这意味着，其后的test.css样式文件和</p> <p>标签都无法被加载，由于标签无法被加载，那么页面自然就无法渲染了。因此在该javaScript代码完全执行完之前，页面都是一片空白。</p> <p>方式二：经典的做法</p> <p>既然标签会阻塞其后内容的加载，那么将标签放到所有页面内容之后不就可以避免这种糟糕的状况了吗？ 将所有的标签尽可能地放到</p> <p>标签底部，以尽量避免对页面其余部分下载的影响。</p> <p>在IE8+浏览器上已经实现了脚本并行下载，但在某些浏览器中(即使脚本文件放到了</p> <p>标签底部)，页面中脚本仍是一个接着一个加载的。所以我们需要下一个方法，即：动态加载脚本。</p> <p>方式三：动态脚本</p> <p>通过文档对象模型(DOM)，我们可以几乎可以页面任意地方创建。</p> <p>上述代码动态创建了一个外链file1的标签，并将其添加到</p> <p>标签内。这种技术的重点在于：</p> <p>无论在何时启动下载，文件的下载和执行过程不会阻塞页面其他进程(包括脚本加载)。</p> <p>然而这种方法也是有缺陷的。这种方法加载的脚本会在下载完成后立即执行，那么意味着多个脚本之间的运行顺序是无法保证的(除了Firefox和Opera)。当某个脚本对另一个脚本有依赖关系时，就很可能发生错误了。比如，写一个jQuery代码，需要引入jQuery库，然而你写的jQuery代码文件很可能会先完成下载并立即执行，这时浏览器会报错——‘jQuery未定义'之类的，因为此时jQuery库还未下载完成。于是做出以下改进：</p> <p>上述代码改进的地方就是增加了一个回调函数，该函数会在相应脚本文件加载完成后被调用。这样便可以实现顺序加载了，写法如下(假设file2依赖file1，file1和file3相互独立)：loadScript(‘file1.js',function(){ loadScript(‘file2.js',function(){}); }); loadScript(‘file3.js',function(){});</p> <p>file2会在file1加载完后才开始加载，保证了在file2执行前file1已经准备妥当。而file1和file3是并行下载的，互不影响。 虽然loadScript函数已经足够好，但还是有些不尽人意的地方——通过分析这段代码，我们知道，loadScript函数中的顺序加载是以脚本的阻塞加载来实现的(正如上述红字部分指出的那样)。而我们真正想实现的是——脚本同步下载并按相应顺序执行，即并行加载并顺序执行。</p> </div> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-72381.htm">pyenv与pyenv-virtualenv的安装和使用（Mac）</a></p>
+                                        <p>下一个：<a href="/news/article-73040.htm">kafka集群安全化之启用kerberos与acl</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-44564.htm" title="合肥免费宠物救援中心（合肥宠物救援中心电话）">合肥免费宠物救援中心（合肥宠物救援中心电话）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-21-node-share-links.htm" title="1月21日→18.3M/S|2025年最新免费节点Free Mellow订阅链接地址">1月21日→18.3M/S|2025年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-51641.htm" title="Vue各类组件之间传值的实现方式">Vue各类组件之间传值的实现方式</a></li>
+                        <li class="py-2"><a href="/news/article-49007.htm" title="开宠物店的方案有哪些（开宠物店基本要懂的）">开宠物店的方案有哪些（开宠物店基本要懂的）</a></li>
+                        <li class="py-2"><a href="/news/article-47519.htm" title=".NET桌面程序集成Web网页开发的十种解决方案_在线工具">.NET桌面程序集成Web网页开发的十种解决方案_在线工具</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-16-node-share-links.htm" title="2月16日→21.4M/S|2025年最新免费节点Free Mellow订阅链接地址">2月16日→21.4M/S|2025年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-50054.htm" title="spring boot actuator监控详细介绍一(超级详细)">spring boot actuator监控详细介绍一(超级详细)</a></li>
+                        <li class="py-2"><a href="/news/article-52682.htm" title="mysql创建表分区详细介绍及示例">mysql创建表分区详细介绍及示例</a></li>
+                        <li class="py-2"><a href="/news/article-57629.htm" title="猫体外驱虫多久一次合适出门（猫体外驱虫多久一次合适出门了）">猫体外驱虫多久一次合适出门（猫体外驱虫多久一次合适出门了）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-5-free-node-subscribe-links.htm" title="2月5日→18.2M/S|2025年最新免费节点Free Mellow订阅链接地址">2月5日→18.2M/S|2025年最新免费节点Free Mellow订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">42</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End Wellcome Section-->
+                <!--main-footer-area-->
+        <footer class="main-footer-area" style="background: url(images/background/3.jpg);">
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="copyright-text text-center">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                        <p>
+                            <a href="/">Free Mellow免费机场订阅节点官网</a> 版权所有
+                            <br />
+                            Powered by WordPress
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--End main-footer-area-->
+        <!--Scroll to top-->
+        <div class="scroll-to-top scroll-to-target" data-target=".header-top"><span class="icon fa fa-angle-up"></span></div>
+        <script src="/assets/website/js/frontend/freemellow/jquery.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/jquery.fancybox.pack.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/jquery.fancybox-media.js"></script>
+        <!--<script src="/assets/website/js/frontend/freemellow/html5lightbox.js"></script>-->
+        <!-- revolution slider js -->
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/jquery.themepunch.tools.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/jquery.themepunch.revolution.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.video.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/owl.carousel.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/wow.js"></script>
+        <!-- bxslider -->
+        <script src="/assets/website/js/frontend/freemellow/bxslider.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/jquery.countTo.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/script.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!--End pagewrapper-->
+</body>
+
+</html>
