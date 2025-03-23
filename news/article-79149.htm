@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freemellow.github.io/news/article-79149.htm" />
+    <meta charset="utf-8">
+    <title>我们如何使用单个MySQL UPDATE语句更新多行上的列值？</title>
+        <meta name="description" content="如果WHERE子句中指定的条件与多行匹配，则可以在单个UPDATE语句中更新多行的列值。SET子句将应用于所有匹配的行。 示例 假设我们有一个表“招标”如下- mysql&gt;&nbsp;Selec" />
+        <link rel="icon" href="/assets/website/img/freemellow/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Free Mellow免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://freemellow.github.io/news/article-79149.htm" />
+    <meta property="og:site_name" content="Free Mellow免费机场订阅节点官网" />
+    <meta property="og:title" content="我们如何使用单个MySQL UPDATE语句更新多行上的列值？" />
+    <meta property="og:image" content="https://freemellow.github.io/uploads/20240925-1/190133be86fa68367d65dfcdad17e73e.webp" />
+        <meta property="og:release_date" content="2025-03-22T08:49:29" />
+    <meta property="og:updated_time" content="2025-03-22T08:49:29" />
+        <meta property="og:description" content="如果WHERE子句中指定的条件与多行匹配，则可以在单个UPDATE语句中更新多行的列值。SET子句将应用于所有匹配的行。 示例 假设我们有一个表“招标”如下- mysql&gt;&nbsp;Selec" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="我们如何使用单个MySQL UPDATE语句更新多行上的列值？">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com">
+    
+    <!-- Stylesheets -->
+    <link href="/assets/website/css/freemellow/bootstrap.css" rel="stylesheet">
+    <link href="/assets/website/css/freemellow/responsive.css" rel="stylesheet">
+    <link href="/assets/website/css/freemellow/style.css" rel="stylesheet">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- mobile responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1J70V33BC1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1J70V33BC1');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="page-wrapper">
+                <!-- Preloader -->
+        <div class="preloader"></div>
+        <!-- Preloader -->
+        <!--Main Header-->
+        <header class="main-header-block sticky-header">
+            <div class="container">
+                <div class="logo">
+                    <figure> 
+                        <a href="/">
+                                                        <span>Free Mellow</span>
+                                                    </a>
+                    </figure>
+                </div>
+                <div class="header-area clearfix">
+                    <nav class="main-menu-navigation">
+                        <div class="navbar-header">
+                            <!-- Toggle Button -->
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                        </div>
+                        <div class="navbar-collapse collapse clearfix">
+                            <ul class="navigation clearfix">
+                                                                <li><a href="/">首页</a></li>
+                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <!--End Main Header -->
+        <!--Page Title-->
+        <section class="page-title">
+            <div class="container clearfix text-center">
+                <div class="title">
+                    <h1>我们如何使用单个MySQL UPDATE语句更新多行上的列值？</h1>
+                </div>
+                <ul class="title-manu">
+                    <li><a href="/">首页</a></li>
+                    <li>-</li>
+                    <li><a href="/news/">新闻资讯</a></li>
+                    <li>-</li>
+                    <li>正文</li>
+                </ul>
+            </div>
+        </section>
+        <!--End Page Title-->
+        <!--Wellcome Section-->
+        <section class="wellcome-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<p>如果WHERE子句中指定的条件与多行匹配，则可以在单个UPDATE语句中更新多行的列值。SET子句将应用于所有匹配的行。</p> <h2>示例</h2> <p>假设我们有一个表“招标”如下-</p> <pre>mysql&gt;&nbsp;Select&nbsp;*&nbsp;from&nbsp;tender;  +-----------+---------+------+ |&nbsp;tender_id&nbsp;|&nbsp;company&nbsp;|&nbsp;rate&nbsp;| +-----------+---------+------+ |&nbsp;200&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;ABC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1000&nbsp;| |&nbsp;300&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;ABD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;5000&nbsp;| |&nbsp;301&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;ABE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;6000&nbsp;| |&nbsp;302&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;ABF&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;2500&nbsp;| |&nbsp;303&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;ABG&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;2600&nbsp;| +-----------+---------+------+  5&nbsp;rows&nbsp;in&nbsp;set&nbsp;(0.00&nbsp;sec)</pre> <p>如果我们要更新“ rate”列，其中“ tender_id”大于或等于300，则可以使用以下查询-</p> <pre>mysql&gt;&nbsp;UPDATE&nbsp;tender&nbsp;SET&nbsp;rate&nbsp;=&nbsp;rate&nbsp;+&nbsp;1000&nbsp;WHERE&nbsp;tender_id&nbsp;&gt;=&nbsp;300; Rows&nbsp;matched:&nbsp;4&nbsp;Changed:&nbsp;4&nbsp;Warnings:&nbsp;0  mysql&gt;&nbsp;Select&nbsp;*&nbsp;from&nbsp;tender;  +-----------+---------+------+ |&nbsp;tender_id&nbsp;|&nbsp;company&nbsp;|&nbsp;rate&nbsp;| +-----------+---------+------+ |&nbsp;200&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;ABC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1000&nbsp;| |&nbsp;300&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;ABD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;6000&nbsp;| |&nbsp;301&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;ABE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;7000&nbsp;| |&nbsp;302&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;ABF&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;3500&nbsp;| |&nbsp;303&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;ABG&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;3600&nbsp;| +-----------+---------+------+  5&nbsp;rows&nbsp;in&nbsp;set&nbsp;(0.00&nbsp;sec)</pre> <p>我们可以从上述结果集中观察到，tender_id&gt; = 300的多行值已更新。</p> <div></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-78467.htm">领养宠物的好处与坏处作文400字的简单介绍</a></p>
+                                        <p>下一个：<a href="/news/article-79150.htm">[ Shell ] 通过 Shell 脚本导出 GDSII/OASIS 文件</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-2-11-free-node-subscribe-links.htm" title="2月11日→19.7M/S|2025年最新免费节点Free Mellow订阅链接地址">2月11日→19.7M/S|2025年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-7-node-share.htm" title="1月7日→18.8M/S|2025年最新免费节点Free Mellow订阅链接地址">1月7日→18.8M/S|2025年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-38137.htm" title="合肥宠物领养中心在哪里（合肥宠物领养中心在哪里啊）">合肥宠物领养中心在哪里（合肥宠物领养中心在哪里啊）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-11-free-node-subscribe-links.htm" title="3月11日→18.9M/S|2025年最新免费节点Free Mellow订阅链接地址">3月11日→18.9M/S|2025年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-58834.htm" title="宠物店每个月利润（宠物店每个月利润多少）">宠物店每个月利润（宠物店每个月利润多少）</a></li>
+                        <li class="py-2"><a href="/news/article-44077.htm" title="南京宠物狗领养地址在哪里查询（南京哪里可以领养宠物狗）">南京宠物狗领养地址在哪里查询（南京哪里可以领养宠物狗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-20-node-share-links.htm" title="1月20日→22.5M/S|2025年最新免费节点Free Mellow订阅链接地址">1月20日→22.5M/S|2025年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-7-free-high-speed-nodes.htm" title="2月7日→20.9M/S|2025年最新免费节点Free Mellow订阅链接地址">2月7日→20.9M/S|2025年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-57065.htm" title="动物疫苗查询真伪网站（动物疫苗检测标准）">动物疫苗查询真伪网站（动物疫苗检测标准）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-17-free-node-subscribe.htm" title="2月17日→21.7M/S|2025年最新免费节点Free Mellow订阅链接地址">2月17日→21.7M/S|2025年最新免费节点Free Mellow订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">69</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End Wellcome Section-->
+                <!--main-footer-area-->
+        <footer class="main-footer-area" style="background: url(images/background/3.jpg);">
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="copyright-text text-center">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                        <p>
+                            <a href="/">Free Mellow免费机场订阅节点官网</a> 版权所有
+                            <br />
+                            Powered by WordPress
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--End main-footer-area-->
+        <!--Scroll to top-->
+        <div class="scroll-to-top scroll-to-target" data-target=".header-top"><span class="icon fa fa-angle-up"></span></div>
+        <script src="/assets/website/js/frontend/freemellow/jquery.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/jquery.fancybox.pack.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/jquery.fancybox-media.js"></script>
+        <!--<script src="/assets/website/js/frontend/freemellow/html5lightbox.js"></script>-->
+        <!-- revolution slider js -->
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/jquery.themepunch.tools.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/jquery.themepunch.revolution.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.video.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/owl.carousel.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/wow.js"></script>
+        <!-- bxslider -->
+        <script src="/assets/website/js/frontend/freemellow/bxslider.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/jquery.countTo.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/script.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!--End pagewrapper-->
+</body>
+
+</html>
