@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://freemellow.github.io/news/article-106374.htm" />
+    <meta charset="utf-8">
+    <title>dubbo发送过程编码失败，会唤醒发送线程吗？_在线工具</title>
+        <meta name="description" content="dubbo发送过程编码失败，会唤醒发送(客户端业务)线程吗？如何实现的？ 在上篇文章 dubbo坑- No provider available for the service xxx 中，如果dub" />
+        <link rel="icon" href="/assets/website/img/freemellow/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Free Mellow免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://freemellow.github.io/news/article-106374.htm" />
+    <meta property="og:site_name" content="Free Mellow免费机场订阅节点官网" />
+    <meta property="og:title" content="dubbo发送过程编码失败，会唤醒发送线程吗？_在线工具" />
+    <meta property="og:image" content="https://freemellow.github.io/uploads/20240925-1/4a65143b82313945fa3e6c1d76bb6888.webp" />
+        <meta property="og:release_date" content="2025-04-28T09:46:48" />
+    <meta property="og:updated_time" content="2025-04-28T09:46:48" />
+        <meta property="og:description" content="dubbo发送过程编码失败，会唤醒发送(客户端业务)线程吗？如何实现的？ 在上篇文章 dubbo坑- No provider available for the service xxx 中，如果dub" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="dubbo发送过程编码失败，会唤醒发送线程吗？_在线工具">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com">
+    
+    <!-- Stylesheets -->
+    <link href="/assets/website/css/freemellow/bootstrap.css" rel="stylesheet">
+    <link href="/assets/website/css/freemellow/responsive.css" rel="stylesheet">
+    <link href="/assets/website/css/freemellow/style.css" rel="stylesheet">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- mobile responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1J70V33BC1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1J70V33BC1');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="page-wrapper">
+                <!-- Preloader -->
+        <div class="preloader"></div>
+        <!-- Preloader -->
+        <!--Main Header-->
+        <header class="main-header-block sticky-header">
+            <div class="container">
+                <div class="logo">
+                    <figure> 
+                        <a href="/">
+                                                        <span>Free Mellow</span>
+                                                    </a>
+                    </figure>
+                </div>
+                <div class="header-area clearfix">
+                    <nav class="main-menu-navigation">
+                        <div class="navbar-header">
+                            <!-- Toggle Button -->
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                        </div>
+                        <div class="navbar-collapse collapse clearfix">
+                            <ul class="navigation clearfix">
+                                                                <li><a href="/">首页</a></li>
+                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <!--End Main Header -->
+        <!--Page Title-->
+        <section class="page-title">
+            <div class="container clearfix text-center">
+                <div class="title">
+                    <h1>dubbo发送过程编码失败，会唤醒发送线程吗？_在线工具</h1>
+                </div>
+                <ul class="title-manu">
+                    <li><a href="/">首页</a></li>
+                    <li>-</li>
+                    <li><a href="/news/">新闻资讯</a></li>
+                    <li>-</li>
+                    <li>正文</li>
+                </ul>
+            </div>
+        </section>
+        <!--End Page Title-->
+        <!--Wellcome Section-->
+        <section class="wellcome-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                <div class="xcblog-blog-detail xcblog-blog-detail-defined">
+                      				  				  				<p>dubbo发送过程编码失败，会唤醒发送(客户端业务)线程吗？如何实现的？</p> <p>在上篇文章 dubbo坑- No provider available for the service xxx 中，如果dubbo请求阶段，编码异常，而业务线程依然在等待响应，dubbo如何处理的？总不能等待超时，响应个超时异常吧，这不合理，接下来看dubbo编码异常，如何处理的</p> <p>回顾下之前自己分析的dubbo transport层记录，详细记录了dubbo调用链路(包括netty channelhandler chain，dubbo channelhandler chain)的执行，在简单回顾下：</p> <p>客户端发送：此时是在业务线程执行，客户端业务线程依次执行 InvokerInvocationHandler入口 -&gt; RegistryDirectory获取服务集合 -&gt; tagRouter过滤 -&gt; 负载均衡选取一个Invoker -&gt; dubbo consumer filter chain -&gt; DubboInvoker执行调用invoke -&gt; Exchange层封装请求模型Request且创建DefaultFuture并阻塞等待 -&gt; 网络客户端NettyClient发送消息 -&gt; dubbo Channel即NettyChannel发送  -&gt; 调用netty channle发送 io.netty.channel.Channel.writeAndFlush(message)，接着触发执行netty pipeline的outbound事件，执行顺序TailContext-&gt;NettyClientHandler-&gt;InternalEncoder-&gt;InternalDecoder-&gt;HeadContext，其中在TailContext内由业务线程切换到reactor IO线程，接着InternalEncoder进行编码，最终由HeadContext把数据发送给服务方；</p> <p>客户端接收服务端响应：reactor IO线程监听到selector有read事件，执行processSelectedKeys()，触发执行netty pipeline的inbound事件，执行顺序【HeadContext-&gt;InternalDecoder-&gt;InternalEncoder-&gt;NettyClientHandler-&gt;TailContext】，由InternalDecoder解码，接着在NettyClientHandler#channelRead执行，NettyClientHandler持有dubbo channelhandler chain，因此链式执行dubbo channelhandler chain，即NettyClient-&gt;MultiMessageHandler-&gt;HeartbeatHandler-&gt;AllChannelHandler-&gt;DecodeHandler-&gt;HeaderExchangeHandler-&gt;DubboProtocol$1，这里重要的是在AllChannelHandler内由IO线程切换到业务线程（封装响应Response为ChannelEventRunnable，提交到dubbo业务线程池），接着在业务线程上HeaderExchangeHandler判断mesage是Response，处理响应，唤醒DefaultFuture的阻塞等待。</p> <p>接着客户端业务线程被唤醒，根据Response内容处理，获取返回的数据结果/异常。</p> <p>以上就是dubbo整个发送-响应的整个流程，重点是netty pipeline和dubbo channelhandler chain，都是责任链模式增加功能。</p> <p>接着分析我们这个问题，从上面回顾的流程可知，未实现序列化，那么异常肯定发生在dubbo编码阶段，即InternalEncoder抛出异常，异常是java.lang.RuntimeException，异常信息<code>Serialized class com.zzz.ioc.codec.util.KeyValuePair must implement java.io.Serializable Java field: private com.zzz.ioc.codec.util.KeyValuePair com.zzz.ioc.protocol.t808.T0900.message</code>，异常封装在netty DefaultChannelPromise，因此在NettyClientHandler获取InternalEncoder.write结果(此过程在IO线程执行)，判断是否有无异常，代码如下</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220505/57449c5a9c648553b69f31a7846e3b26.jpg" alt="dubbo发送过程编码失败，会唤醒发送线程吗？_在线工具"></p> <p>消息发送有异常，则mock response返回，接着执行NettyClientHandler持有的dubbo channelhandler chain[NettyClient-&gt;MultiMessageHandler-&gt;HeartbeatHandler-&gt;AllChannelHandler-&gt;DecodeHandler-&gt;HeaderExchangeHandler-&gt;DubboProtocol$1]，AllChannelHandler执行，IO线程切换到业务线程(dubbo客户端线程池，线程名称DubboClientHandler-开头)，接着业务线程上执行HeaderExchangeHandler，处理response，唤醒发送等待线程。此过程为了避免write操作失败，mock Request，然后和正常接收响应基本一样的处理方式(不同之处是不经过selector的processSelectedKeys())唤醒发送线程。通信框架出现这个问题也不容易，但是dubbo设计的非常巧妙。</p> <p>小结：</p> <p>回答前面提问</p> <p>1.dubbo发送过程编码失败，会唤醒发送线程吗？</p> <p>会唤醒发送线程，否则发送线程就是timeout异常，实际并没有。</p> <p>如何实现的？</p> <p>发送异常，比如编码异常，NettyClientHandler 进行mock response，接着和正常处理响应基本相同方式，触发NettyClientHandler 持有的dubbo channelhandler chain，由AllChannelHandler封装响应Response为ChannelEventRunnable，提交到dubbo业务线程池(cache线程池，线程名<code>DubboClientHandler-</code>开头)，线程由IO线程切换到dubbo业务线程执行Exchange，即HeaderExchangeHandler处理response，继而唤醒发送线程，最后发送(客户端业务)线程处理响应业务逻辑。</p> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-106373.htm">如何在idea上部署tomcat&amp;项目</a></p>
+                                        <p>下一个：<a href="/news/article-107402.htm">SpringBoot 2.3.x 分层构建 Docker 镜像实践详解</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-103976.htm" title="动物疫苗的正确使用方法视频教程全集（动物疫苗制作流程）">动物疫苗的正确使用方法视频教程全集（动物疫苗制作流程）</a></li>
+                        <li class="py-2"><a href="/news/article-100908.htm" title="怎样给猫咪驱虫便宜安全（怎样给猫猫驱虫）">怎样给猫咪驱虫便宜安全（怎样给猫猫驱虫）</a></li>
+                        <li class="py-2"><a href="/news/article-89808.htm" title="动物打疫苗后抓了人是否还要打疫苗呢图片（动物打了疫苗的,抓伤了人怎么办）">动物打疫苗后抓了人是否还要打疫苗呢图片（动物打了疫苗的,抓伤了人怎么办）</a></li>
+                        <li class="py-2"><a href="/news/article-86191.htm" title="使用 vscode 插件可视化制作和管理脚手架及原理解析">使用 vscode 插件可视化制作和管理脚手架及原理解析</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-18-node-share.htm" title="3月18日→20.6M/S|2025年最新免费节点Free Mellow订阅链接地址">3月18日→20.6M/S|2025年最新免费节点Free Mellow订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-83335.htm" title="开个宠物店大概需要多少钱（现在开宠物店前景好吗）">开个宠物店大概需要多少钱（现在开宠物店前景好吗）</a></li>
+                        <li class="py-2"><a href="/news/article-86900.htm" title="宠物粮龙头企业排行榜前十（宠物粮公司排名）">宠物粮龙头企业排行榜前十（宠物粮公司排名）</a></li>
+                        <li class="py-2"><a href="/news/article-79843.htm" title="重庆宠物领养中心地址在哪里啊电话（重庆宠物领养重庆宠物赠送）">重庆宠物领养中心地址在哪里啊电话（重庆宠物领养重庆宠物赠送）</a></li>
+                        <li class="py-2"><a href="/news/article-71730.htm" title="猫三针疫苗价格（三针猫咪疫苗多少钱）">猫三针疫苗价格（三针猫咪疫苗多少钱）</a></li>
+                        <li class="py-2"><a href="/news/article-69115.htm" title="宠物医院好评语30字通用怎么写 宠物医院好评语30字通用怎么写的">宠物医院好评语30字通用怎么写 宠物医院好评语30字通用怎么写的</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">89</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End Wellcome Section-->
+                <!--main-footer-area-->
+        <footer class="main-footer-area" style="background: url(images/background/3.jpg);">
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="copyright-text text-center">
+                                            <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                        <p>
+                            <a href="/">Free Mellow免费机场订阅节点官网</a> 版权所有
+                            <br />
+                            Powered by WordPress
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--End main-footer-area-->
+        <!--Scroll to top-->
+        <div class="scroll-to-top scroll-to-target" data-target=".header-top"><span class="icon fa fa-angle-up"></span></div>
+        <script src="/assets/website/js/frontend/freemellow/jquery.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/jquery.fancybox.pack.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/jquery.fancybox-media.js"></script>
+        <!--<script src="/assets/website/js/frontend/freemellow/html5lightbox.js"></script>-->
+        <!-- revolution slider js -->
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/jquery.themepunch.tools.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/jquery.themepunch.revolution.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/revolution/js/extensions/revolution.extension.video.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/owl.carousel.min.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/wow.js"></script>
+        <!-- bxslider -->
+        <script src="/assets/website/js/frontend/freemellow/bxslider.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/jquery.countTo.js"></script>
+        <script src="/assets/website/js/frontend/freemellow/script.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!--End pagewrapper-->
+</body>
+
+</html>
