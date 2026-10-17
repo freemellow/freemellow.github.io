@@ -357,14 +357,9 @@ A：未必。很多网络环境下需要细致配置，特别是在学校、公�
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Mellow 支持哪些平台？</h5></div>
+    <div class="panel-heading"><h5>Netch 如何为游戏流量提供加速？</h5></div>
     <div class="panel-body">
-        Mellow 是基于 Electron 的跨平台代理工具，支持 Windows、macOS 和 Linux。它通过 TUN 模式接管全局流量，并支持 Clash 规则和订阅格式，非常灵活。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>VMess 节点的 alterId 参数还需要设置吗？</h5></div>
-    <div class="panel-body">
-        在新版 V2Ray/Xray 内核中，alterId 已被废弃，不再影响认证逻辑。建议用户设置为 0 或删除该字段，以避免连接异常或不兼容情况。<hr />    </div>
+        Netch 支持 UDP 转发，可为游戏流量建立高速通道。结合策略组和节点延迟检测，可减少丢包和延迟，保证游戏访问稳定流畅，提高网络体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Sing-box 的自定义 outbound 功能有什么用？</h5></div>
@@ -372,14 +367,9 @@ A：未必。很多网络环境下需要细致配置，特别是在学校、公�
         Sing-box 允许用户自定义多个 outbound 出口，并通过路由规则选择性输出。例如可让流媒体走特定节点，而其他网站使用备用节点，从而实现精准分流。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Netch 全局代理与规则代理的区别是什么？</h5></div>
+    <div class="panel-heading"><h5>VMess 连接延迟过高该如何优化？</h5></div>
     <div class="panel-body">
-        全局代理会将所有流量通过节点转发，适合游戏或全局科学上网；规则代理只针对指定应用或 IP 走节点，优化带宽利用和网络效率，根据不同需求选择使用模式。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 是否支持 DNS 分流？</h5></div>
-    <div class="panel-body">
-        支持。Clash 可以自定义 DNS 服务器，并通过 rules 区分国内外域名解析方式。比如国内网站可使用本地 DNS，国外网站可走代理 DNS，从而提升访问速度与稳定性。<hr />    </div>
+        可尝试切换传输协议（如 WS、gRPC）、调整 MTU 或启用 MUX 多路复用功能。同时检查服务器地理位置、带宽和延迟，并选择最优节点以降低延迟。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Sing-box 的分流规则可以按端口分配节点吗？</h5></div>
@@ -387,14 +377,9 @@ A：未必。很多网络环境下需要细致配置，特别是在学校、公�
         支持。用户可通过端口号匹配流量，将不同应用的流量分配到指定节点，实现精准分流。结合策略组使用，可优化访问速度和网络稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>SSR 节点延迟高、丢包严重，常见排查步骤有哪些？</h5></div>
+    <div class="panel-heading"><h5>Netch 全局代理与规则代理的区别是什么？</h5></div>
     <div class="panel-body">
-        先用 ping 和 traceroute 检查到服务器的延迟与路由跳数；再通过测速工具测带宽并尝试更换不同出站端口或混淆方式；若仍然不稳，考虑更换节点或联系客服查看服务端链路质量。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Netch 如何为游戏流量提供加速？</h5></div>
-    <div class="panel-body">
-        Netch 支持 UDP 转发，可为游戏流量建立高速通道。结合策略组和节点延迟检测，可减少丢包和延迟，保证游戏访问稳定流畅，提高网络体验。<hr />    </div>
+        全局代理会将所有流量通过节点转发，适合游戏或全局科学上网；规则代理只针对指定应用或 IP 走节点，优化带宽利用和网络效率，根据不同需求选择使用模式。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>WinXray 的 PAC 模式如何优化访问？</h5></div>
@@ -402,9 +387,24 @@ A：未必。很多网络环境下需要细致配置，特别是在学校、公�
         PAC 模式可根据规则动态判断流量是否走代理，无需手动切换节点。适合国内外混合访问场景，提高访问速度和稳定性，减少误操作导致的访问失败。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>VMess 连接延迟过高该如何优化？</h5></div>
+    <div class="panel-heading"><h5>Clash 是否支持 DNS 分流？</h5></div>
     <div class="panel-body">
-        可尝试切换传输协议（如 WS、gRPC）、调整 MTU 或启用 MUX 多路复用功能。同时检查服务器地理位置、带宽和延迟，并选择最优节点以降低延迟。    </div>
+        支持。Clash 可以自定义 DNS 服务器，并通过 rules 区分国内外域名解析方式。比如国内网站可使用本地 DNS，国外网站可走代理 DNS，从而提升访问速度与稳定性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Mellow 支持哪些平台？</h5></div>
+    <div class="panel-body">
+        Mellow 是基于 Electron 的跨平台代理工具，支持 Windows、macOS 和 Linux。它通过 TUN 模式接管全局流量，并支持 Clash 规则和订阅格式，非常灵活。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>SSR 节点延迟高、丢包严重，常见排查步骤有哪些？</h5></div>
+    <div class="panel-body">
+        先用 ping 和 traceroute 检查到服务器的延迟与路由跳数；再通过测速工具测带宽并尝试更换不同出站端口或混淆方式；若仍然不稳，考虑更换节点或联系客服查看服务端链路质量。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>VMess 节点的 alterId 参数还需要设置吗？</h5></div>
+    <div class="panel-body">
+        在新版 V2Ray/Xray 内核中，alterId 已被废弃，不再影响认证逻辑。建议用户设置为 0 或删除该字段，以避免连接异常或不兼容情况。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -452,16 +452,16 @@ A：未必。很多网络环境下需要细致配置，特别是在学校、公�
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/free-high-speed-nodes-2026-10-9.htm" title="10月9日→18M/S|2025年最新免费节点Free Mellow订阅链接地址">10月9日→18M/S|2025年最新免费节点Free Mellow订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-high-speed-nodes-2026-9-23.htm" title="9月23日→18.5M/S|2025年最新免费节点Free Mellow订阅链接地址">9月23日→18.5M/S|2025年最新免费节点Free Mellow订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-9-13.htm" title="9月13日→20M/S|2025年最新免费节点Free Mellow订阅链接地址">9月13日→20M/S|2025年最新免费节点Free Mellow订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-16-free-node-subscribe.htm" title="9月16日→22.9M/S|2025年最新免费节点Free Mellow订阅链接地址">9月16日→22.9M/S|2025年最新免费节点Free Mellow订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-4-node-share.htm" title="9月4日→22M/S|2025年最新免费节点Free Mellow订阅链接地址">9月4日→22M/S|2025年最新免费节点Free Mellow订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-9-7.htm" title="9月7日→22.9M/S|2025年最新免费节点Free Mellow订阅链接地址">9月7日→22.9M/S|2025年最新免费节点Free Mellow订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-30-free-node-subscribe.htm" title="9月30日→18.9M/S|2025年最新免费节点Free Mellow订阅链接地址">9月30日→18.9M/S|2025年最新免费节点Free Mellow订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-10-17.htm" title="10月17日→19.1M/S|2025年最新免费节点Free Mellow订阅链接地址">10月17日→19.1M/S|2025年最新免费节点Free Mellow订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-10-3.htm" title="10月3日→20.9M/S|2025年最新免费节点Free Mellow订阅链接地址">10月3日→20.9M/S|2025年最新免费节点Free Mellow订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-high-speed-nodes-2026-9-11.htm" title="9月11日→19.6M/S|2025年最新免费节点Free Mellow订阅链接地址">9月11日→19.6M/S|2025年最新免费节点Free Mellow订阅链接地址</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/node-share-links-2026-10-1.htm" title="10月1日→19.6M/S|2025年最新免费节点Free Mellow订阅链接地址">10月1日→19.6M/S|2025年最新免费节点Free Mellow订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-9-29.htm" title="9月29日→20.2M/S|2025年最新免费节点Free Mellow订阅链接地址">9月29日→20.2M/S|2025年最新免费节点Free Mellow订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-10-7.htm" title="10月7日→20.5M/S|2025年最新免费节点Free Mellow订阅链接地址">10月7日→20.5M/S|2025年最新免费节点Free Mellow订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-9-7.htm" title="9月7日→22.9M/S|2025年最新免费节点Free Mellow订阅链接地址">9月7日→22.9M/S|2025年最新免费节点Free Mellow订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-4-node-share.htm" title="9月4日→22M/S|2025年最新免费节点Free Mellow订阅链接地址">9月4日→22M/S|2025年最新免费节点Free Mellow订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-high-speed-nodes-2026-9-3.htm" title="9月3日→21.1M/S|2025年最新免费节点Free Mellow订阅链接地址">9月3日→21.1M/S|2025年最新免费节点Free Mellow订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-2-free-subscribe-node.htm" title="9月2日→22.3M/S|2025年最新免费节点Free Mellow订阅链接地址">9月2日→22.3M/S|2025年最新免费节点Free Mellow订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-16-free-node-subscribe.htm" title="9月16日→22.9M/S|2025年最新免费节点Free Mellow订阅链接地址">9月16日→22.9M/S|2025年最新免费节点Free Mellow订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-9-5.htm" title="9月5日→18.1M/S|2025年最新免费节点Free Mellow订阅链接地址">9月5日→18.1M/S|2025年最新免费节点Free Mellow订阅链接地址</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -473,7 +473,7 @@ A：未必。很多网络环境下需要细致配置，特别是在学校、公�
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">9</span> <a href="/date/2026-10/" title="2026-10 归档">2026-10</a></h4>
+                <h4><span class="badge" style="float: right;">16</span> <a href="/date/2026-10/" title="2026-10 归档">2026-10</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">29</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
